@@ -5,31 +5,28 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float bulletSpeed = 20f;
+	public Weapon currentWeapon;
 
-    // Update is called once per frame
-    void Update()
-    {
+	private float nextTimeOfFire = 0f;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
+	// Update is called once per frame
+	void Update()
+	{
+		if (Input.GetButton("Fire1"))
+		{
+			if (Time.time >= nextTimeOfFire)
+			{
+				currentWeapon.Shoot(firePoint);
+				nextTimeOfFire = Time.time + 1f / currentWeapon.fireRate;
+			}
+		}
+	}
 
-// to make a machine gun
-/*        if (Input.GetButton("Fire1"))
-        {
-            Shoot();
-        }
-*/
-    }
-
-    void Shoot()
+/*	void Shoot1()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
-    }
+    }*/
 
 }

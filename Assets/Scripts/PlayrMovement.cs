@@ -11,6 +11,8 @@ public class PlayrMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 mousePos;
 
+    public static Vector2 Position;
+
 
 
     // Update is called once per frame
@@ -32,6 +34,8 @@ public class PlayrMovement : MonoBehaviour
         Vector2 lookDirection = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
+
+        Position = rb.position;
     }
 
 }
