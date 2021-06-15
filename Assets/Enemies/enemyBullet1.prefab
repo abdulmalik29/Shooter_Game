@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed80e8b853986a479f4039abe88476a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   hitEffect: {fileID: 1805389993079476, guid: fa2e9795b029be44fa979cbb5322275d, type: 3}
   isEnemyBullet: 1
   speed: 10

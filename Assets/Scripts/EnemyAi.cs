@@ -21,11 +21,11 @@ public class EnemyAi : MonoBehaviour
 	[Header("Shooting")]
 
 	public bool isShooter = false;
-	public float strafeSpeed = 1f;
+	public float attackingSpeed = 1f;
 	public float shootDistance = 5f;
 	public GameObject bulletPrefab;
 	public Transform firePoint;
-	public float fireRate = 1f;
+	public float firePerSecond = 1f;
 	private float nextTimeToFire = .5f;
 
 	private Rigidbody2D rb;
@@ -109,14 +109,14 @@ public class EnemyAi : MonoBehaviour
 			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 			Destroy(bullet, 30f);
 
-			nextTimeToFire = Time.time + 1f / fireRate;
+			nextTimeToFire = Time.time + 1f / firePerSecond;
 
 		}
 	}
 
 	Vector2 MoveStrafing(Vector2 direction)
 	{
-		Vector2 newPos = transform.position + transform.right * Time.fixedDeltaTime * strafeSpeed;
+		Vector2 newPos = transform.position + transform.right * Time.fixedDeltaTime * attackingSpeed;
 		return newPos;
 	}
 
