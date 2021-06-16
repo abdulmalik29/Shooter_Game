@@ -14,8 +14,6 @@ public class Progression : MonoBehaviour
 
     public static Progression instance;
 
-    //public TextMeshProUGUI scoreText;
-
     private void Awake()
     {
         if (instance == null)
@@ -24,8 +22,9 @@ public class Progression : MonoBehaviour
         Score = 0;
         currentWaveNum = 0;
 
-        Debug.Log("Score " + Score);
-        Debug.Log(" current Wave " + currentWaveNum);
+        Debug.Log("***** Score " + Score);
+        Debug.Log("***** current Wave " + currentWaveNum);
+        Debug.Log("***** current Hearts: " + Player.currentHearts);
         //scoreText.text = Score.ToString();
 
         //Time.timeScale = 1f;
@@ -35,7 +34,7 @@ public class Progression : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

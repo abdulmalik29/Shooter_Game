@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class WaveSpawner : MonoBehaviour
+public class WaveManager : MonoBehaviour
 {
+
+	public static event EventHandler onWaveChanged;
+
 	public float startSpawnRadius = 10f;
 	private float spawnRadius;
 
@@ -26,7 +31,6 @@ public class WaveSpawner : MonoBehaviour
 		if (Progression.currentWaveNum < waves.Length)
 		{
 			Progression.currentWave = waves[Progression.currentWaveNum];
-
 		}
 		
 		spawnRadius = startSpawnRadius; /** Progression.Growth;*/
@@ -42,6 +46,8 @@ public class WaveSpawner : MonoBehaviour
 		}
 
 		Progression.currentWaveNum++;
+		if (onWaveChanged != null)
+			onWaveChanged(this, EventArgs.Empty);
 
 
 	}
