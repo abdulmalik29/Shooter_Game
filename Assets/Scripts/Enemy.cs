@@ -5,9 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public uint reward = 10;
-    public int damage = 10;
+    public int damage = 1;
     public int health = 10;
+    public uint reward = 10;
 
     public GameObject deathEffect;
 
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Progression.Score += reward;
-        Debug.Log("Score: "+ Progression.Score);
+        //Debug.Log("Score: "+ Progression.Score);
 
         Destroy(this.gameObject);
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag =="Player")
         {
             Die();
-            Player.TakeDamage();
+            Player.takeDamage(damage);
 
         }
 

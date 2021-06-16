@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 10
-  damage: 10
+  damage: 1
   health: 10
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}

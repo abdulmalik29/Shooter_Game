@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
     public bool isEnemyBullet = false;
-
+    public int damage = 1;
     public float speed = 10f;
 
 
@@ -17,9 +17,7 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.up * speed;
 
         if (isEnemyBullet)
-        {
             rb.AddTorque(5f, ForceMode2D.Impulse);
-        }
 
     }
 
@@ -33,6 +31,8 @@ public class Bullet : MonoBehaviour
                 GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
                 Destroy(effect, 4f);
                 Destroy(gameObject);
+
+                Player.takeDamage(damage);
             }
         }
         else 
