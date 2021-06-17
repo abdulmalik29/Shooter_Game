@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject deathEffect;
 
+
+
     //Player player;
     //Rigidbody2D rb;
 
@@ -18,8 +21,22 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        Bullet.onAOE_Attack += WaveSpawner_onWaveChanged;
+        
 
+    }
+
+    private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
+    {
+        takeDamage(PlayerShooting.currentWeapon.AOE_damage);
+    }
+
+    void takeDamage(int dmg)
+    {
+        health -= dmg;
+
+        if (health <= 0)
+            Die();
     }
 
     void Die()
@@ -39,12 +56,11 @@ public class Enemy : MonoBehaviour
         {
             Die();
             Player.takeDamage(damage);
-
         }
 
         else if (collision.gameObject.tag == "Bullet")
         {
-            Die();
+            takeDamage(PlayerShooting.currentWeapon.damage);
         }
     }
 }

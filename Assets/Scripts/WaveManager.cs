@@ -9,6 +9,8 @@ public class WaveManager : MonoBehaviour
 
 	public static event EventHandler onWaveChanged;
 
+	public Boolean isSpawnerOn = false;
+
 	public float startSpawnRadius = 10f;
 	private float spawnRadius;
 
@@ -39,8 +41,11 @@ public class WaveManager : MonoBehaviour
         {
 			if (Time.time >= nextSpawnTime)
 			{
-				SpawnWave();
-				nextSpawnTime = Time.time + 1f / Progression.currentWave.spawnPerSecond;
+				if (isSpawnerOn)
+                {
+					SpawnWave();
+					nextSpawnTime = Time.time + 1f / Progression.currentWave.spawnPerSecond;
+                }
 			}
 			return;
 		}
@@ -48,7 +53,6 @@ public class WaveManager : MonoBehaviour
 		Progression.currentWaveNum++;
 		if (onWaveChanged != null)
 			onWaveChanged(this, EventArgs.Empty);
-
 
 	}
 

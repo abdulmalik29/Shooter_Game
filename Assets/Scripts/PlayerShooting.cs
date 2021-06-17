@@ -5,13 +5,21 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public Transform firePoint;
-	public Weapon currentWeapon;
+	public Weapon startCurrentWeapon;
+	public static Weapon currentWeapon;
 
-	private float nextTimeOfFire = 0f;
+    private float nextTimeOfFire = 0f;
 
-	// Update is called once per frame
-	void Update()
+    private void Start()
+    {
+		currentWeapon = startCurrentWeapon;
+	}
+
+    // Update is called once per frame
+    void Update()
 	{
+		//globalCurrentWeapon = currentWeapon;
+
 		if (Input.GetButton("Fire1"))
 		{
 			if (Time.time >= nextTimeOfFire)
@@ -22,11 +30,5 @@ public class PlayerShooting : MonoBehaviour
 		}
 	}
 
-/*	void Shoot1()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
-    }*/
 
 }

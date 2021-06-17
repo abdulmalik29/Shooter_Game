@@ -1,20 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject hitEffect;
     public bool isEnemyBullet = false;
     public int damage = 1;
     public float speed = 10f;
 
+    [Header("AOE Damage")]
+    public GameObject hitEffect;
+    public float hitEffectDuration = 4f;
+
+    [Header("AOE Damage")]
+    public bool hasAOE_damage;
+    public int AOE_maxTargets = 0;
+    public float AOE_range;
+
+    public static event EventHandler onAOE_Attack;
 
     private Rigidbody2D rb;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
+        rb.rotation = PlayrMovement.playerAngle+90;
 
         if (isEnemyBullet)
             rb.AddTorque(5f, ForceMode2D.Impulse);
@@ -29,7 +42,7 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.tag != "Enemy")
             {
                 GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-                Destroy(effect, 4f);
+                Destroy(effect, hitEffectDuration);
                 Destroy(gameObject);
 
                 Player.takeDamage(damage);
@@ -40,8 +53,41 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.tag != "Player")
             {
                 GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-                Destroy(effect, 4f);
+                Destroy(effect, hitEffectDuration);
                 Destroy(gameObject);
+
+                if (hasAOE_damage)
+                {
+                    // get any colliders in range and on the layermask
+                    Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, AOE_range);
+
+
+                    // this is a list that we will populate with enemies in range
+                    List<GameObject> enemiesToHit = new List<GameObject>();
+
+                    // populate the "enemiesToHit" list, will only add up to "maxTargets" number of objects
+                    for (int i = 0; i < AOE_maxTargets; i++)
+                    {
+                        // make sure "i" doesn't go past the number of enemies in range
+                        if (i < enemiesInRange.Length && enemiesInRange[i] != collision.gameObject)
+                        {
+                            enemiesToHit.Add(enemiesInRange[i].gameObject);
+                        }
+                        else
+                        {
+                            // stop the loop if there are no more hits
+                            break;
+                        }
+                    }
+
+                    foreach (GameObject enemy in enemiesToHit)
+                    {
+                        // do damage 
+                        if (onAOE_Attack != null)
+                            onAOE_Attack(this, EventArgs.Empty);
+
+                    }
+                }
             }
         }
 

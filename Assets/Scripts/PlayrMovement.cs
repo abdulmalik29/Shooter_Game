@@ -12,6 +12,7 @@ public class PlayrMovement : MonoBehaviour
     private Vector2 mousePos;
 
     public static Vector2 Position;
+    public static float playerAngle;
 
 
 
@@ -36,6 +37,7 @@ public class PlayrMovement : MonoBehaviour
         rb.rotation = angle;
 
         Position = rb.position;
+        playerAngle = angle;
     }
 
 }
