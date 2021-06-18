@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour
     public int damage = 1;
     public float speed = 10f;
 
-    [Header("AOE Damage")]
+    public bool debbuging = true;
+    [Header("Hit Effect")]
     public GameObject hitEffect;
     public float hitEffectDuration = 4f;
 
@@ -18,6 +19,7 @@ public class Bullet : MonoBehaviour
     public bool hasAOE_damage;
     public int AOE_maxTargets = 0;
     public float AOE_range;
+    public LineController AOE_prefap;
 
     public static event EventHandler onAOE_Attack;
 
@@ -86,10 +88,27 @@ public class Bullet : MonoBehaviour
                         if (onAOE_Attack != null)
                             onAOE_Attack(this, EventArgs.Empty);
 
+                        //showAOE_Atttack(enemy.transform);
+
                     }
                 }
             }
         }
 
+    }
+
+    void showAOE_Atttack(Transform target)
+    {
+        //LineController newLine = Instantiate(AOE_prefap);
+        //newLine.AssainTarget(transform.position, target);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (debbuging)
+        {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, AOE_range);
+        }
     }
 }

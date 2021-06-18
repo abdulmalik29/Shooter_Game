@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     public uint reward = 10;
 
     public GameObject deathEffect;
+    public GameObject damageFloatingText;
+
+    private Color color = new Color(255f/255f, 103f/255f, 0f/255f); // orange color
 
 
 
@@ -23,7 +26,6 @@ public class Enemy : MonoBehaviour
     {
         Bullet.onAOE_Attack += WaveSpawner_onWaveChanged;
         
-
     }
 
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
@@ -36,7 +38,14 @@ public class Enemy : MonoBehaviour
         health -= dmg;
 
         if (health <= 0)
+        {
             Die();
+            color = Color.red;
+        }
+
+        GameObject popUp = Instantiate(damageFloatingText, transform.position, Quaternion.identity) as GameObject;
+        popUp.transform.GetChild(0).GetComponent<TextMesh>().text = dmg.ToString();
+        popUp.transform.GetChild(0).GetComponent<TextMesh>().color = color;
     }
 
     void Die()

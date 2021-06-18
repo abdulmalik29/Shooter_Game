@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 319271ae7023fba469b4f7626009603b, type: 3}
-  m_Name: first_weapon
+  m_Name: egun
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6408661546656217290, guid: 703cc9e6ffa1fad4d9a17da7c74d625c,
+  bulletPrefab: {fileID: 1993870054855384187, guid: d72a122e264e6864484a7be98b0ec30e,
     type: 3}
-  fireRate: 1
+  fireRate: 1.5
   shootsRaycasts: 0
-  damage: 10
-  AOE_damage: 1
+  damage: 20
+  AOE_damage: 5

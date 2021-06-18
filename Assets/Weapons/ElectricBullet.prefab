@@ -136,8 +136,10 @@ MonoBehaviour:
   isEnemyBullet: 0
   damage: 15
   speed: 20
+  debbuging: 1
   hitEffect: {fileID: 41524049509131458, guid: 282a2a4217ebd734ca4831b78de05b2c, type: 3}
   hitEffectDuration: 1.1
   hasAOE_damage: 1
-  AOE_maxTargets: 3
-  AOE_range: 2
+  AOE_maxTargets: 1
+  AOE_range: 1.2
+  AOE_prefap: {fileID: 0}
