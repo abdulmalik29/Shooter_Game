@@ -6,22 +6,35 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [Header("UI Text")]
     public Text scoreText;
     public Text waveText;
+
+    [Header("Health system")]
     public GameObject heart;
     public GameObject heartPos;
     public List<Image> hearts;
 
+    [Header("Level up effect")]
+    public GameObject levelUpEffect;
+
+    private RippleProcessor rp;
+
+
     void Start()
     {
         WaveManager.onWaveChanged += WaveSpawner_onWaveChanged;
+
+        rp = Camera.main.GetComponent<RippleProcessor>();
+
 
         for (int i = 0; i < Player.currentHearts; i++)
         {
             GameObject h = Instantiate(heart, heartPos.transform);
             hearts.Add(h.GetComponent<Image>());
         }
+
     }
 
     // Update is called once per frame
@@ -33,6 +46,12 @@ public class UiManager : MonoBehaviour
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
     {
         waveText.text = "Wave: " + Progression.currentWaveNum;
+
+        GameObject effect = Instantiate(levelUpEffect, PlayrMovement.Position, Quaternion.identity);
+        Destroy(effect, 3f);
+        rp.MaxAmount = 100;
+        rp.Ripple(PlayrMovement.Position);
+        //Ripple();
     }
 
 }

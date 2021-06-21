@@ -71,7 +71,7 @@ public class Bullet : MonoBehaviour
                     for (int i = 0; i < AOE_maxTargets; i++)
                     {
                         // make sure "i" doesn't go past the number of enemies in range
-                        if (i < enemiesInRange.Length && enemiesInRange[i] != collision.gameObject)
+                        if (i < enemiesInRange.Length)
                         {
                             enemiesToHit.Add(enemiesInRange[i].gameObject);
                         }
@@ -84,9 +84,12 @@ public class Bullet : MonoBehaviour
 
                     foreach (GameObject enemy in enemiesToHit)
                     {
-                        // do damage 
-                        if (onAOE_Attack != null)
-                            onAOE_Attack(this, EventArgs.Empty);
+                        if (!GameObject.ReferenceEquals(enemy, collision.gameObject))
+                        {
+                            // do damage 
+                            if (onAOE_Attack != null)
+                                onAOE_Attack(this, EventArgs.Empty);
+                        }
 
                         //showAOE_Atttack(enemy.transform);
 
