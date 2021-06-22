@@ -6,11 +6,11 @@ using TMPro;
 
 public class Enemy : MonoBehaviour
 {
-
     public int damage = 1;
     public int health = 10;
     public uint reward = 10;
 
+    private float waveStrenth = 20;
     public GameObject deathEffect;
     public GameObject damageFloatingText;
 
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
             color = Color.red;
         }
 
-        GameObject popUp = Instantiate(damageFloatingText, transform.position, Quaternion.identity) as GameObject;
+        GameObject popUp = Instantiate(damageFloatingText, transform.position, Quaternion.identity);
         popUp.transform.GetChild(0).GetComponent<TextMeshPro>().color = color;
         popUp.transform.GetChild(0).GetComponent<TextMeshPro>().text = dmg.ToString();
     }
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 4f);
 
-        rp.MaxAmount = 20;
+        rp.MaxAmount = waveStrenth;
         rp.Ripple(PlayrMovement.Position);
 
     }
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
             Player.takeDamage(damage);
         }
 
-        else if (collision.gameObject.tag == "Bullet")
+        else if (collision.gameObject.CompareTag("Bullet"))
         {
             takeDamage(PlayerShooting.currentWeapon.damage);
         }

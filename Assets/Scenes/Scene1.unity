@@ -961,6 +961,100 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4ac3cc2165b274c9ceebd37985e2b9, type: 3}
+--- !u!1001 &1545844221
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384128, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993870054855384187, guid: d72a122e264e6864484a7be98b0ec30e,
+        type: 3}
+      propertyPath: m_Name
+      value: ElectricBullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d72a122e264e6864484a7be98b0ec30e, type: 3}
+--- !u!1 &1545844222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1993870054855384187, guid: d72a122e264e6864484a7be98b0ec30e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1545844221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1545844223
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545844222}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fbfbe8523e3d8b40ba72a9d73eaf2fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1549849566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1567,7 +1661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RippleMaterial: {fileID: 2100000, guid: 4d3d3a2e65a9d684fbd8c07c78c5925a, type: 2}
   MaxAmount: 100
-  Friction: 0.9
+  Friction: 0.95
 --- !u!1 &2133105783
 GameObject:
   m_ObjectHideFlags: 0
