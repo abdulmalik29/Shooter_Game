@@ -26,15 +26,10 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //WaveManager.onWaveChanged += die_onWaveChanged;
+        
         Bullet.onAOE_Attack += WaveSpawner_onWaveChanged;
         rp = Camera.main.GetComponent<RippleProcessor>();
 
-    }
-
-    private void die_onWaveChanged(object sender, EventArgs e)
-    {
-        Die(false);
     }
 
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
@@ -57,7 +52,7 @@ public class Enemy : MonoBehaviour
         popUp.transform.GetChild(0).GetComponent<TextMeshPro>().text = dmg.ToString();
     }
 
-    void Die(bool addScoreWhenKilled = true)
+    public void Die(bool addScoreWhenKilled = true)
     {
         if (addScoreWhenKilled)
         {

@@ -51,7 +51,7 @@ public class UiManager : MonoBehaviour
         Destroy(effect, 3f);
         rp.MaxAmount = 100;
         rp.Ripple(PlayrMovement.Position);
-        //Ripple();
+        
     }
 
 }
