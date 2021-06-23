@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WaveManager.onWaveChanged += killEnemies_onWaveChanged;
+        WaveManager.onWaveChanged += destroyEnemies_onWaveChanged;
     }
 
 
@@ -17,16 +17,14 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    private void killEnemies_onWaveChanged(object sender, EventArgs e)
+    private void destroyEnemies_onWaveChanged(object sender, EventArgs e)
     {
-        StartCoroutine(WaitAndKillEnemies());
+        StartCoroutine(WaitThenDestroy());
     }
 
-    IEnumerator WaitAndKillEnemies()
+    IEnumerator WaitThenDestroy()
     {
-        Debug.Log("Before Waitng ");
-        yield return new WaitForSeconds(1f);
-        Debug.Log("Waitng ");
+        yield return new WaitForSeconds(1.5f);
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             enemy.GetComponent<Enemy>().Die(false);

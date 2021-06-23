@@ -22,9 +22,9 @@ public class Progression : MonoBehaviour
         Score = 0;
         currentWaveNum = 0;
 
-        Debug.Log("***** Score " + Score);
-        Debug.Log("***** current Wave " + currentWaveNum);
-        Debug.Log("***** current Hearts: " + Player.currentHearts);
+        //Debug.Log("***** Score " + Score);
+        //Debug.Log("***** current Wave " + currentWaveNum);
+        //Debug.Log("***** current Hearts: " + Player.currentHearts);
         //scoreText.text = Score.ToString();
 
         //Time.timeScale = 1f;

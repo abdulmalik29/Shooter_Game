@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     private float waveStrenth = 20;
     public GameObject deathEffect;
-    public GameObject damageFloatingText;
+    //public GameObject damageFloatingText;
 
     private Color color = new Color(255f/255f, 103f/255f, 0f/255f); // orange color
     private RippleProcessor rp;
@@ -47,9 +47,9 @@ public class Enemy : MonoBehaviour
             color = Color.red;
         }
 
-        GameObject popUp = Instantiate(damageFloatingText, transform.position, Quaternion.identity);
-        popUp.transform.GetChild(0).GetComponent<TextMeshPro>().color = color;
-        popUp.transform.GetChild(0).GetComponent<TextMeshPro>().text = dmg.ToString();
+        //GameObject popUp = Instantiate(damageFloatingText, transform.position, Quaternion.identity);
+        //popUp.transform.GetChild(0).GetComponent<TextMeshPro>().color = color;
+        //popUp.transform.GetChild(0).GetComponent<TextMeshPro>().text = dmg.ToString();
     }
 
     public void Die(bool addScoreWhenKilled = true)
