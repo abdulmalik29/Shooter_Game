@@ -27,7 +27,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            enemy.GetComponent<Enemy>().Die(false);
+            if(enemy != null)
+            {
+                enemy.GetComponent<Enemy>().Die(false);
+            }
         }
     }
 }
