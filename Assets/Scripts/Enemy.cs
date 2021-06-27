@@ -12,18 +12,9 @@ public class Enemy : MonoBehaviour
 
     private float waveStrenth = 20;
     public GameObject deathEffect;
-    //public GameObject damageFloatingText;
 
-    private Color color = new Color(255f/255f, 103f/255f, 0f/255f); // orange color
     private RippleProcessor rp;
 
-
-
-    //Player player;
-    //Rigidbody2D rb;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -43,13 +34,9 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
-            color = Color.red;
+            Die(true);
         }
 
-        //GameObject popUp = Instantiate(damageFloatingText, transform.position, Quaternion.identity);
-        //popUp.transform.GetChild(0).GetComponent<TextMeshPro>().color = color;
-        //popUp.transform.GetChild(0).GetComponent<TextMeshPro>().text = dmg.ToString();
     }
 
     public void Die(bool addScoreWhenKilled = true)
@@ -59,13 +46,15 @@ public class Enemy : MonoBehaviour
             Progression.Score += reward;
         }
         //Debug.Log("Score: "+ Progression.Score);
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 4f);
+            rp.MaxAmount = waveStrenth;
+            rp.Ripple(transform.position);
+        }
 
-        Destroy(this.gameObject);
-        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 4f);
-
-        rp.MaxAmount = waveStrenth;
-        rp.Ripple(PlayrMovement.Position);
 
     }
 

@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class EnemyAi : MonoBehaviour
 {
+	public enum EnemyType
+	{
+		shooter,
+		basic,
+		circler
+	};
 
 	private static List<Rigidbody2D> EnemyRBs;
 
+	public EnemyType eType;
 	public float moveSpeed = 5f;
 
 	[Range(0f, 1f)]
@@ -18,9 +25,12 @@ public class EnemyAi : MonoBehaviour
 	public float startMaxChaseDistance = 20f;
 	private float maxChaseDistance;
 
-	[Header("Shooting")]
+	[Header("Circler")]
+	public float circleringSpeed = 1f;
+	public float circleingRadius = 5f;
 
-	public bool isShooter = false;
+
+	[Header("Shooting")]
 	public float attackingSpeed = 1f;
 	public float shootDistance = 5f;
 	public GameObject bulletPrefab;
@@ -32,7 +42,6 @@ public class EnemyAi : MonoBehaviour
 
 	private Vector3 velocity;
 
-	// Use this for initialization
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -69,11 +78,12 @@ public class EnemyAi : MonoBehaviour
 		Vector2 direction = (PlayrMovement.Position - rb.position).normalized;
 
 		Vector2 newPos;
-
-		if (isShooter)
+		
+		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+		rb.rotation = angle;
+		
+		if (eType == EnemyType.shooter)
 		{
-			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-			rb.rotation = angle;
 
 			if (distance > shootDistance)
 			{
@@ -81,45 +91,32 @@ public class EnemyAi : MonoBehaviour
 			}
 			else
 			{
-				newPos = MoveStrafing(direction);
+				newPos = MoveStrafing(direction, attackingSpeed);
 			}
 
             Shoot();
-
             newPos -= rb.position;
-
             rb.AddForce(newPos, ForceMode2D.Force);
 
 		}
+/*		else if (eType == EnemyType.circler)
+        {
+
+		}*/
 		else
 		{
-			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-			rb.rotation = Mathf.LerpAngle(rb.rotation, angle, turnSpeed);
-
 			newPos = MoveRegular(direction);
-
 			rb.MovePosition(newPos);
 		}
 	}
 
-	void Shoot()
+	Vector2 MoveStrafing(Vector2 direction, float speed)
 	{
-		if (Time.time >= nextTimeToFire)
-		{
-			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-			Destroy(bullet, 30f);
-
-			nextTimeToFire = Time.time + 1f / firePerSecond;
-
-		}
-	}
-
-	Vector2 MoveStrafing(Vector2 direction)
-	{
-		Vector2 newPos = transform.position + transform.right * Time.fixedDeltaTime * attackingSpeed;
+		Vector2 newPos = transform.position + transform.right * Time.fixedDeltaTime * speed;
 		return newPos;
 	}
 
+	
 	Vector2 MoveRegular(Vector2 direction)
 	{
 		Vector2 repelForce = Vector2.zero;
@@ -139,6 +136,18 @@ public class EnemyAi : MonoBehaviour
 		newPos += repelForce * Time.fixedDeltaTime * repelAmount;
 
 		return newPos;
+	}
+
+	void Shoot()
+	{
+		if (Time.time >= nextTimeToFire)
+		{
+			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+			Destroy(bullet, 30f);
+
+			nextTimeToFire = Time.time + 1f / firePerSecond;
+
+		}
 	}
 
 	private void OnDrawGizmosSelected()

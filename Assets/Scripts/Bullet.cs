@@ -19,11 +19,17 @@ public class Bullet : MonoBehaviour
     public bool hasAOE_damage;
     public int AOE_maxTargets = 0;
     public float AOE_range;
-    public LineController AOE_prefap;
+
+    public enum MyEnum
+    {
+        myEnum1,
+        myEnum2,
+        myEnum3
+    };
 
     public static event EventHandler onAOE_Attack;
-
     private Rigidbody2D rb;
+    public MyEnum s;
 
     private void Start()
     {
@@ -33,6 +39,8 @@ public class Bullet : MonoBehaviour
 
         if (isEnemyBullet)
             rb.AddTorque(5f, ForceMode2D.Impulse);
+
+        s = MyEnum.myEnum1;
 
     }
 

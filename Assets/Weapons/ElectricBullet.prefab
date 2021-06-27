@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1993870054855384191}
   - component: {fileID: 1993870054855384189}
   - component: {fileID: 1993870054855384188}
-  - component: {fileID: 6254838283355279653}
   - component: {fileID: 1545844223}
+  - component: {fileID: 6254838283355279653}
   m_Layer: 0
   m_Name: ElectricBullet
   m_TagString: Bullet
@@ -122,6 +122,25 @@ CapsuleCollider2D:
   m_Offset: {x: 2.3, y: 0}
   m_Size: {x: 3.5, y: 0.3}
   m_Direction: 1
+--- !u!95 &1545844223
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993870054855384187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fbfbe8523e3d8b40ba72a9d73eaf2fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6254838283355279653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,23 +162,3 @@ MonoBehaviour:
   hasAOE_damage: 1
   AOE_maxTargets: 4
   AOE_range: 1.2
-  AOE_prefap: {fileID: 0}
---- !u!95 &1545844223
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993870054855384187}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1fbfbe8523e3d8b40ba72a9d73eaf2fe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
