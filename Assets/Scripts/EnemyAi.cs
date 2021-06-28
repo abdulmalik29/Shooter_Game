@@ -26,8 +26,10 @@ public class EnemyAi : MonoBehaviour
 	private float maxChaseDistance;
 
 	[Header("Circler")]
-	public float circleringSpeed = 1f;
-	public float circleingRadius = 5f;
+	public float angulargSpeed = 2f;
+	public float rotationRadius = 2f;
+
+	private float posX, posY, Angle = 0f;
 
 
 	[Header("Shooting")]
@@ -99,12 +101,20 @@ public class EnemyAi : MonoBehaviour
             rb.AddForce(newPos, ForceMode2D.Force);
 
 		}
-/*		else if (eType == EnemyType.circler)
+        else if (eType == EnemyType.circler)
         {
 
-		}*/
-		else
-		{
+			posX = PlayrMovement.Position.x + Mathf.Cos(Angle) * rotationRadius;
+			posY = PlayrMovement.Position.y + Mathf.Sin(Angle) * rotationRadius;
+
+			transform.position = new Vector2(posX, posY);
+
+			Angle += Time.deltaTime * angulargSpeed;
+			if (Angle >= 360f) Angle = 0f;
+
+		}
+        else
+        {
 			newPos = MoveRegular(direction);
 			rb.MovePosition(newPos);
 		}

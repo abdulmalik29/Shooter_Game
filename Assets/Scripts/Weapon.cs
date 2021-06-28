@@ -10,10 +10,11 @@ public class Weapon : ScriptableObject
 	public bool shootsRaycasts = false;
 	public int damage = 20;
 	public int AOE_damage = 0;
+	GameObject bullet;
 
-	public void Shoot(Transform firePoint)
+    public void Shoot(Transform firePoint)
 	{
-		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		//bullet.transform.localScale *= Progression.Growth;
 		Destroy(bullet, 10f);
 	}

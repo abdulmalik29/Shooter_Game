@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public int health = 10;
     public uint reward = 10;
 
+    public bool splitOnDeath = false;
+
     private float waveStrenth = 20;
     public GameObject deathEffect;
 
