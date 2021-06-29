@@ -7,7 +7,7 @@ using System;
 public class Bullet : MonoBehaviour
 {
     public bool isEnemyBullet = false;
-    private int enemyDamage = 1;
+    private int damage = 1;
 
     public float speed = 10f;
 
@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
                 Destroy(effect, hitEffectDuration);
                 Destroy(gameObject);
 
-                Player.takeDamage(enemyDamage);
+                Player.takeDamage(damage);
             }
         }
         else 

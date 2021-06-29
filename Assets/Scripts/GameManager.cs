@@ -38,16 +38,6 @@ public class GameManager : MonoBehaviour
                 enemy.GetComponent<Enemy>().Die(false);
             }
         }
-
-        //Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(position, levelUpExplosionRange);
-
-        //foreach (Collider2D enemy in enemiesInRange)
-        //{
-        //    if (enemy.gameObject != null)
-        //    {
-        //        enemy.gameObject.GetComponent<Enemy>().Die(false);
-        //    }
-        //}
     }
     private void OnDrawGizmos()
     {

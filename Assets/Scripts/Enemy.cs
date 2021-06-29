@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,22 +11,26 @@ public class Enemy : MonoBehaviour
     public int health = 10;
     public uint reward = 10;
 
+    [Header("")]
     public bool splitOnDeath = false;
+    public GameObject childrenPrefab;
+    public float spawnRadius = 1.5f;
 
-    private float waveStrenth = 20;
+    [Header("")]
     public GameObject deathEffect;
+    private float waveStrenth = 20;
 
     private RippleProcessor rp;
 
     void Start()
     {
         
-        Bullet.onAOE_Attack += WaveSpawner_onWaveChanged;
+        Bullet.onAOE_Attack += Bullet_onAOE_Attack;
         rp = Camera.main.GetComponent<RippleProcessor>();
 
     }
 
-    private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
+    private void Bullet_onAOE_Attack(object sender, EventArgs e)
     {
         takeDamage(PlayerShooting.currentWeapon.AOE_damage);
     }
@@ -57,6 +62,17 @@ public class Enemy : MonoBehaviour
             rp.Ripple(transform.position);
         }
 
+        if (splitOnDeath)
+        {
+            int numberOfChildren = Random.Range(1, 4);
+            for (int i = 0; i < numberOfChildren; i++)
+            {
+                Vector2 spawnPos = transform.position;
+                spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
+                Instantiate(childrenPrefab, spawnPos, Quaternion.identity);
+            }
+        }
+
 
     }
 
@@ -72,5 +88,13 @@ public class Enemy : MonoBehaviour
         {
             takeDamage(PlayerShooting.currentWeapon.damage);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
+
     }
 }

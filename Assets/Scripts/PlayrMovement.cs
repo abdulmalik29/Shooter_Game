@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayrMovement : MonoBehaviour
 {
-    public float movementSpeed = 5f;
+    public static float movementSpeed = 5f;
     public Rigidbody2D rb;
     public Camera cam;
 

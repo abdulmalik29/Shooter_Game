@@ -45,7 +45,7 @@ public class UiManager : MonoBehaviour
 
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
     {
-        waveText.text = "Wave: " + Progression.currentWaveNum;
+        waveText.text = "Wave: " + WaveManager.currentWaveNum;
 
         GameObject effect = Instantiate(levelUpEffect, PlayrMovement.Position, Quaternion.identity);
         Destroy(effect, 3f);

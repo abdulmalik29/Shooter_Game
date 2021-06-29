@@ -9,9 +9,6 @@ public class Progression : MonoBehaviour
 {
     public static ulong Score;
 
-    public static int currentWaveNum;
-    public static Wave currentWave;
-
     public static Progression instance;
 
     private void Awake()
@@ -20,15 +17,14 @@ public class Progression : MonoBehaviour
             instance = this;
 
         Score = 0;
-        currentWaveNum = 0;
 
-        //Debug.Log("***** Score " + Score);
-        //Debug.Log("***** current Wave " + currentWaveNum);
-        //Debug.Log("***** current Hearts: " + Player.currentHearts);
-        //scoreText.text = Score.ToString();
+/*        Debug.Log("***** Score " + Score);
+        Debug.Log("***** current Wave " + currentWaveNum);
+        Debug.Log("***** current Hearts: " + Player.currentHearts);
+        scoreText.text = Score.ToString();
 
-        //Time.timeScale = 1f;
-        //Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;*/
     }
 
     // Start is called before the first frame update
