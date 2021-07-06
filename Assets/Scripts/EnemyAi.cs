@@ -25,13 +25,6 @@ public class EnemyAi : MonoBehaviour
 	public float startMaxChaseDistance = 20f;
 	private float maxChaseDistance;
 
-	[Header("Circler")]
-	public float angulargSpeed = 2f;
-	public float rotationRadius = 2f;
-
-	private float posX, posY, Angle = 0f;
-
-
 	[Header("Shooting")]
 	public float attackingSpeed = 1f;
 	public float shootDistance = 5f;
@@ -41,12 +34,14 @@ public class EnemyAi : MonoBehaviour
 	private float nextTimeToFire = .5f;
 
 	private Rigidbody2D rb;
+	private Enemy e;
 
-	private Vector3 velocity;
+	//private Vector3 velocity;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		e = GetComponent<Enemy>();
 
 		if (EnemyRBs == null)
 		{
@@ -73,7 +68,8 @@ public class EnemyAi : MonoBehaviour
 
 		if (distance > maxChaseDistance)
 		{
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			e.Die(false);
 			return;
 		}
 
@@ -99,18 +95,6 @@ public class EnemyAi : MonoBehaviour
             Shoot();
             newPos -= rb.position;
             rb.AddForce(newPos, ForceMode2D.Force);
-
-		}
-        else if (eType == EnemyType.circler)
-        {
-
-			posX = PlayrMovement.Position.x + Mathf.Cos(Angle) * rotationRadius;
-			posY = PlayrMovement.Position.y + Mathf.Sin(Angle) * rotationRadius;
-
-			transform.position = new Vector2(posX, posY);
-
-			Angle += Time.deltaTime * angulargSpeed;
-			if (Angle >= 360f) Angle = 0f;
 
 		}
         else
