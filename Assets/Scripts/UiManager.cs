@@ -10,11 +10,7 @@ public class UiManager : MonoBehaviour
     [Header("UI Text")]
     public Text scoreText;
     public Text waveText;
-
-    [Header("Health system")]
-    public GameObject heart;
-    public GameObject heartPos;
-    public List<Image> hearts;
+    public Text healthText;
 
     [Header("Level up effect")]
     public GameObject levelUpEffect;
@@ -28,19 +24,13 @@ public class UiManager : MonoBehaviour
 
         rp = Camera.main.GetComponent<RippleProcessor>();
 
-
-        for (int i = 0; i < Player.currentHearts; i++)
-        {
-            GameObject h = Instantiate(heart, heartPos.transform);
-            hearts.Add(h.GetComponent<Image>());
-        }
-
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = "Score : " + Progression.Score.ToString();
+        healthText.text = Player.currentHearts.ToString();
     }
 
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)

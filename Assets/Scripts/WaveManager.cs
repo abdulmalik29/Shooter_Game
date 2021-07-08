@@ -9,7 +9,10 @@ public class WaveManager : MonoBehaviour
 
 	public static event EventHandler onWaveChanged;
 
-	public Boolean isSpawnerOn = false;
+	public Boolean Debugging;
+
+	private Boolean isSpawnerOn;
+	private Boolean isCoroutineExecuting = false;
 
 	public float startSpawnRadius = 10f;
 	private float spawnRadius;
@@ -24,8 +27,14 @@ public class WaveManager : MonoBehaviour
     private void Awake()
     {
 		currentWaveNum = 0;
+		isSpawnerOn = false;
 
 	}
+
+    private void Start()
+    {
+		StartCoroutine(startSpawner());
+    }
 
     void Update()
 	{
@@ -41,21 +50,19 @@ public class WaveManager : MonoBehaviour
 
 		if (Progression.Score  < currentWave.scoreGate)
         {
-			if (Time.time >= nextSpawnTime)
+			if (Time.time >= nextSpawnTime && !Debugging)
 			{
-				if (isSpawnerOn)
-                {
+                if (isSpawnerOn)
+				{
 					SpawnWave();
 					nextSpawnTime = Time.time + 1f / currentWave.spawnPerSecond;
-                }
-			}
+				}
+            }
 			return;
 		}
         else
         {
-			
 			StartCoroutine(WaitThenChangeWave());
-
         }
 
 	}
@@ -80,7 +87,8 @@ public class WaveManager : MonoBehaviour
 	}
 
 
-	private bool isCoroutineExecuting = false;
+	
+	
 	IEnumerator WaitThenChangeWave()
 	{
 		if (isCoroutineExecuting)
@@ -94,14 +102,21 @@ public class WaveManager : MonoBehaviour
 			onWaveChanged(this, EventArgs.Empty);
 
 		float oldSpeed = PlayrMovement.movementSpeed;
-		PlayrMovement.movementSpeed = 0;
+		PlayrMovement.movementSpeed = 3;
 
-		yield return new WaitForSecondsRealtime(3.5f);
+		yield return new WaitForSecondsRealtime(3.85f);
 		currentWaveNum++;
 
 		PlayrMovement.movementSpeed = oldSpeed;
 
 		isCoroutineExecuting = false;
+
+	}
+
+	IEnumerator startSpawner()
+	{
+		yield return new WaitForSeconds(1);
+		isSpawnerOn = true;
 
 	}
 
