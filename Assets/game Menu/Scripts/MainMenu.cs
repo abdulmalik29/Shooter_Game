@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public float transitionTime = 1f;
     public void StartGame()
     {
-        Debug.Log("%%%%%%%");
+        //Debug.Log("%%%%%%%");
         //loadTransaction.instance.load();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

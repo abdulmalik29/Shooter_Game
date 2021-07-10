@@ -30,13 +30,13 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score : " + Progression.Score.ToString();
+        waveText.text = "Wave: " + WaveManager.currentWaveNum;
         healthText.text = Player.currentHearts.ToString();
     }
 
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
     {
-        waveText.text = "Wave: " + WaveManager.currentWaveNum;
-
+        
         GameObject effect = Instantiate(levelUpEffect, PlayrMovement.Position, Quaternion.identity);
         Destroy(effect, 3f);
         rp.MaxAmount = 100;

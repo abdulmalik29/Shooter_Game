@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayrMovement : MonoBehaviour
 {
-    public static float movementSpeed = 5f;
+    public float startMoveSpeed = 5f;
+
     public Rigidbody2D rb;
     public Camera cam;
-
-    private Vector2 movement;
-    private Vector2 mousePos;
 
     public static Vector2 Position;
     public static float playerAngle;
 
+    private Vector2 movement;
+    private Vector2 mousePos;
+
+    private float movementSpeed;
 
 
     // Update is called once per frame
@@ -24,6 +26,10 @@ public class PlayrMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+        transform.localScale = Vector3.one * Progression.Growth;
+        movementSpeed = startMoveSpeed * Progression.Growth;
     }
 
     private void FixedUpdate()

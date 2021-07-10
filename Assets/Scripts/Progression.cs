@@ -4,10 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Progression : MonoBehaviour
 {
     public static ulong Score;
+    public static float Growth;
 
     public static Progression instance;
 
@@ -17,20 +19,13 @@ public class Progression : MonoBehaviour
             instance = this;
 
         Score = 0;
-
-/*        Debug.Log("***** Score " + Score);
-        Debug.Log("***** current Wave " + currentWaveNum);
-        Debug.Log("***** current Hearts: " + Player.currentHearts);
-        scoreText.text = Score.ToString();
-
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = 0.02f * Time.timeScale;*/
+        Growth = 1f;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        WaveManager.onWaveChanged += OnWaveChanged;
     }
 
     // Update is called once per frame
@@ -38,4 +33,23 @@ public class Progression : MonoBehaviour
     {
         
     }
+
+    private void OnWaveChanged(object sender, EventArgs e)
+    {
+        float baseScale = Growth;
+        float factor = 1.3f;
+
+        //float t = 0f;
+        //while (t < 1f)
+        //{
+        //    float growth = Mathf.Lerp(1f, factor, t);
+        //    Growth = baseScale * growth;
+        //    t += Time.fixedDeltaTime * 1f;
+        //}
+
+        Growth *= factor;
+
+        Debug.Log("Growth"+ Growth);
+    }
+
 }

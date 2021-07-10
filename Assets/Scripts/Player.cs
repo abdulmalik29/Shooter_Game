@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHearts = maxHearts;
-        Debug.Log("current Hearts: " + currentHearts);
+        //Debug.Log("current Hearts: " + currentHearts);
     }
 
     public static void takeDamage(int Damage = 1)
