@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9179652184524361098}
   m_Layer: 0
   m_Name: EnemyChildren
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   health: 10
-  reward: 10
+  reward: 5
   splitOnDeath: 0
   childrenPrefab: {fileID: 0}
   spawnRadius: 0
@@ -165,13 +165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eType: 1
-  moveSpeed: 10
+  moveSpeed: 8
   turnSpeed: 0.1
   repelRange: 2
   repelAmount: 0.3
   startMaxChaseDistance: 20
-  angulargSpeed: 2
-  rotationRadius: 2
   attackingSpeed: 1
   shootDistance: 5
   bulletPrefab: {fileID: 0}

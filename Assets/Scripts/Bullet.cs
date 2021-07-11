@@ -119,8 +119,8 @@ public class Bullet : MonoBehaviour
     {
         if (debbuging)
         {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, AOE_range);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, AOE_range);
         }
     }
 }

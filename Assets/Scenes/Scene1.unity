@@ -1488,8 +1488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e97fab887d52bd46a542ca917938653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 1
-  DebuggingWaveNumber: 3
+  Debugging: 0
+  DebuggingWaveNumber: 0
   startSpawnRadius: 10
   waves:
   - scoreGate: 80
@@ -1505,7 +1505,7 @@ MonoBehaviour:
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
-      spawnChance: 0.169
+      spawnChance: 0.3
     - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
         type: 3}
       spawnChance: 0.65
@@ -1524,7 +1524,7 @@ MonoBehaviour:
       spawnChance: 0.387
   - scoreGate: 600
     weapon: {fileID: 11400000, guid: 19350428a3b76a94691c5f20d5894c50, type: 2}
-    spawnPerSecond: 1.5
+    spawnPerSecond: 1.35
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
@@ -1537,7 +1537,7 @@ MonoBehaviour:
       spawnChance: 0.387
     - enemyPrefab: {fileID: 140535954375462249, guid: 82b941be26cade743bfa22f5c5366d58,
         type: 3}
-      spawnChance: 0.44
+      spawnChance: 0.4
 --- !u!4 &1834257328
 Transform:
   m_ObjectHideFlags: 0

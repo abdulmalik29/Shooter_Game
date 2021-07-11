@@ -166,8 +166,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 20
-  reward: 30
+  health: 50
+  reward: 40
+  splitOnDeath: 0
+  childrenPrefab: {fileID: 0}
+  spawnRadius: 1.5
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
 --- !u!114 &7232561804278275633
@@ -182,12 +185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649864dd5f441d646aecdc4bf501c054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eType: 0
   moveSpeed: 100
   turnSpeed: 0.3
   repelRange: 2
   repelAmount: 0.3
   startMaxChaseDistance: 20
-  isShooter: 1
   attackingSpeed: 5
   shootDistance: 0.9
   bulletPrefab: {fileID: 1494275084034516730, guid: e64118640e4c87c46b701618a4c3520e,

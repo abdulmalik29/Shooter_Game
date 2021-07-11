@@ -106,7 +106,7 @@ public class WaveManager : MonoBehaviour
 
 		isCoroutineExecuting = true;
 
-		yield return new WaitForSecondsRealtime(.9f);
+		yield return new WaitForSecondsRealtime(.6f);
 		
 		if (onWaveChanged != null)
 			onWaveChanged(this, EventArgs.Empty);

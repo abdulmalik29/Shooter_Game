@@ -62,9 +62,9 @@ public class Enemy : MonoBehaviour
             rp.Ripple(transform.position);
         }
 
-        if (splitOnDeath)
+        if (splitOnDeath && addScoreWhenKilled)
         {
-            int numberOfChildren = Random.Range(1, 4);
+            int numberOfChildren = Random.Range(2, 5);
             for (int i = 0; i < numberOfChildren; i++)
             {
                 Vector2 spawnPos = transform.position;
