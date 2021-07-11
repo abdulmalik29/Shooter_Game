@@ -10,23 +10,33 @@ public class WaveManager : MonoBehaviour
 	public static event EventHandler onWaveChanged;
 
 	public Boolean Debugging;
+	public int DebuggingWaveNumber = -1;
 
 	private Boolean isSpawnerOn;
 	private Boolean isCoroutineExecuting = false;
 
+	[Header(" ")] 
 	public float startSpawnRadius = 10f;
 	private float spawnRadius;
 
 	public Wave[] waves;
 
-	private float nextSpawnTime = 1f;
-
 	public static int currentWaveNum;
 	public static Wave currentWave;
 
+	private float nextSpawnTime = 1f;
+
     private void Awake()
     {
-		currentWaveNum = 0;
+		if (DebuggingWaveNumber == -1)
+        {
+			currentWaveNum = 0;
+        }
+        else
+        {
+			currentWaveNum = DebuggingWaveNumber;
+		}
+
 		isSpawnerOn = false;
 
 	}
@@ -46,7 +56,7 @@ public class WaveManager : MonoBehaviour
 			currentWave = waves[currentWaveNum];
 		}
 		
-		spawnRadius = startSpawnRadius; /** Progression.Growth;*/
+		spawnRadius = startSpawnRadius * Progression.Growth;
 
 		if (Progression.Score  < currentWave.scoreGate)
         {
@@ -96,7 +106,7 @@ public class WaveManager : MonoBehaviour
 
 		isCoroutineExecuting = true;
 
-		yield return new WaitForSecondsRealtime(1.5f);
+		yield return new WaitForSecondsRealtime(.9f);
 		
 		if (onWaveChanged != null)
 			onWaveChanged(this, EventArgs.Empty);

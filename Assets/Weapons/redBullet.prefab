@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyBullet: 0
-  speed: 20
+  speed: 22
   debbuging: 1
   hitEffect: {fileID: 1805389993079476, guid: fa2e9795b029be44fa979cbb5322275d, type: 3}
   hitEffectDuration: 4

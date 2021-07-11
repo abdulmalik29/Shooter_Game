@@ -349,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 5784891497854501540, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5784891497854501540, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
@@ -713,7 +713,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094312023
 GameObject:
@@ -938,6 +938,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5784891497854501563, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
       propertyPath: m_Enabled
@@ -974,7 +979,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1303901365
 MonoBehaviour:
@@ -1197,7 +1202,7 @@ PrefabInstance:
     - target: {fileID: 4242264289035600811, guid: 361f7f46ff6016a43925959798c15e07,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4242264289035600811, guid: 361f7f46ff6016a43925959798c15e07,
         type: 3}
@@ -1483,35 +1488,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e97fab887d52bd46a542ca917938653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 0
+  Debugging: 1
+  DebuggingWaveNumber: 3
   startSpawnRadius: 10
   waves:
   - scoreGate: 80
-    weapon: {fileID: 11400000, guid: 7a2ffe0e34a45ab458f5918f2a4b443b, type: 2}
+    weapon: {fileID: 11400000, guid: d0a34cffcc476794fa2ecf47a2d026e8, type: 2}
     spawnPerSecond: 1.5
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
       spawnChance: 1
-  - scoreGate: 350
-    weapon: {fileID: 11400000, guid: fa966dddb4120af418d1b70132960e33, type: 2}
-    spawnPerSecond: 0.9
+  - scoreGate: 200
+    weapon: {fileID: 11400000, guid: aeb26badad306a14fb992ea64f2d1983, type: 2}
+    spawnPerSecond: 1.2
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
-      spawnChance: 0.628
+      spawnChance: 0.169
     - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
         type: 3}
-      spawnChance: 0.3
+      spawnChance: 0.65
+  - scoreGate: 440
+    weapon: {fileID: 11400000, guid: 7a2ffe0e34a45ab458f5918f2a4b443b, type: 2}
+    spawnPerSecond: 1.7
+    enemies:
+    - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
+        type: 3}
+      spawnChance: 0.202
+    - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
+        type: 3}
+      spawnChance: 0.44
     - enemyPrefab: {fileID: 879491858878048644, guid: 074874af88d268c47b6a76afc71ce698,
         type: 3}
-      spawnChance: 0.4
-    - enemyPrefab: {fileID: 790276125907452665, guid: 07022642b7169d8499e9b84c657a7c2e,
+      spawnChance: 0.387
+  - scoreGate: 600
+    weapon: {fileID: 11400000, guid: 19350428a3b76a94691c5f20d5894c50, type: 2}
+    spawnPerSecond: 1.5
+    enemies:
+    - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
       spawnChance: 0.2
     - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
         type: 3}
-      spawnChance: 1
+      spawnChance: 0.44
+    - enemyPrefab: {fileID: 879491858878048644, guid: 074874af88d268c47b6a76afc71ce698,
+        type: 3}
+      spawnChance: 0.387
+    - enemyPrefab: {fileID: 140535954375462249, guid: 82b941be26cade743bfa22f5c5366d58,
+        type: 3}
+      spawnChance: 0.44
 --- !u!4 &1834257328
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,6 +1618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4ac3cc2165b274c9ceebd37985e2b9, type: 3}
@@ -1895,6 +1926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5784891497854501563, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}

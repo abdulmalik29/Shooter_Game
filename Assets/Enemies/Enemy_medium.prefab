@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 30
+  health: 25
   reward: 20
   splitOnDeath: 0
   childrenPrefab: {fileID: 0}
@@ -155,13 +155,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eType: 1
-  moveSpeed: 7
+  moveSpeed: 6
   turnSpeed: 0.3
   repelRange: 2
   repelAmount: 0.3
   startMaxChaseDistance: 20
-  angulargSpeed: 2
-  rotationRadius: 2
   attackingSpeed: 1
   shootDistance: 5
   bulletPrefab: {fileID: 0}

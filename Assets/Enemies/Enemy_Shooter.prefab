@@ -135,9 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9040ba1f6d22a442a12bdf9e59e72a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 10
   damage: 1
   health: 10
+  reward: 10
+  splitOnDeath: 0
+  childrenPrefab: {fileID: 0}
+  spawnRadius: 1.5
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
 --- !u!114 &3712644734010835930
@@ -152,18 +155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649864dd5f441d646aecdc4bf501c054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eType: 0
   moveSpeed: 100
   turnSpeed: 0.3
   repelRange: 2
   repelAmount: 0.3
   startMaxChaseDistance: 20
-  isShooter: 1
   attackingSpeed: 1
   shootDistance: 0.5
   bulletPrefab: {fileID: 1494275084034516730, guid: e64118640e4c87c46b701618a4c3520e,
     type: 3}
   firePoint: {fileID: 3712644735355459650}
-  firePerSecond: 1
+  firePerSecond: 0.85
 --- !u!1 &3712644735355459651
 GameObject:
   m_ObjectHideFlags: 0

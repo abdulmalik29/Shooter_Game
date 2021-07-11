@@ -40,7 +40,7 @@ public class Progression : MonoBehaviour
         //float factor = 1.1f;
 
         //Growth *= factor;
-        Growth = 1.2f;
+        Growth = 1.1f;
 
         Debug.Log("Growth" + Growth);
     }

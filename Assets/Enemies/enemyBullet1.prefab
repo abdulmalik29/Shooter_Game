@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1494275084034516679}
   m_Layer: 0
   m_Name: enemyBullet1
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed80e8b853986a479f4039abe88476a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffect: {fileID: 1805389993079476, guid: fa2e9795b029be44fa979cbb5322275d, type: 3}
   isEnemyBullet: 1
   speed: 10
+  debbuging: 1
+  hitEffect: {fileID: 1805389993079476, guid: fa2e9795b029be44fa979cbb5322275d, type: 3}
+  hitEffectDuration: 4
+  hasAOE_damage: 0
+  AOE_maxTargets: 0
+  AOE_range: 0
+  s: 0
