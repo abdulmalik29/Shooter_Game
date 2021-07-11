@@ -1495,7 +1495,7 @@ MonoBehaviour:
       spawnChance: 1
   - scoreGate: 350
     weapon: {fileID: 11400000, guid: fa966dddb4120af418d1b70132960e33, type: 2}
-    spawnPerSecond: 2
+    spawnPerSecond: 0.9
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
@@ -1937,6 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5944d3c95c7ed140a2c194901e27e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMoveSpeed: 5
   rb: {fileID: 2133105786}
   cam: {fileID: 2085822623}
 --- !u!212 &2133105785

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayrMovement : MonoBehaviour
 {
     public float startMoveSpeed = 5f;
+    public static float movementSpeed;
 
     public Rigidbody2D rb;
     public Camera cam;
@@ -15,7 +16,6 @@ public class PlayrMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 mousePos;
 
-    private float movementSpeed;
 
 
     // Update is called once per frame
@@ -27,8 +27,6 @@ public class PlayrMovement : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-
-        transform.localScale = Vector3.one * Progression.Growth;
         movementSpeed = startMoveSpeed * Progression.Growth;
     }
 

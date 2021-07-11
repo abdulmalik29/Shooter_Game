@@ -36,20 +36,13 @@ public class Progression : MonoBehaviour
 
     private void OnWaveChanged(object sender, EventArgs e)
     {
-        float baseScale = Growth;
-        float factor = 1.3f;
+        //float baseScale = Growth;
+        //float factor = 1.1f;
 
-        //float t = 0f;
-        //while (t < 1f)
-        //{
-        //    float growth = Mathf.Lerp(1f, factor, t);
-        //    Growth = baseScale * growth;
-        //    t += Time.fixedDeltaTime * 1f;
-        //}
+        //Growth *= factor;
+        Growth = 1.2f;
 
-        Growth *= factor;
-
-        Debug.Log("Growth"+ Growth);
+        Debug.Log("Growth" + Growth);
     }
 
 }
