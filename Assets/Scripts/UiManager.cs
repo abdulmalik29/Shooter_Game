@@ -30,7 +30,7 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score : " + Progression.Score.ToString();
-        waveText.text = "Wave: " + WaveManager.currentWaveNum;
+        waveText.text = "Wave: " + (WaveManager.currentWaveNum).ToString();
         healthText.text = Player.currentHearts.ToString();
     }
 

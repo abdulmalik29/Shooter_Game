@@ -56,7 +56,7 @@ public class WaveManager : MonoBehaviour
 			currentWave = waves[currentWaveNum];
 		}
 		
-		spawnRadius = startSpawnRadius * Progression.Growth;
+		spawnRadius = startSpawnRadius /* * Progression.Growth*/;
 
 		if (Progression.Score  < currentWave.scoreGate)
         {
@@ -74,7 +74,6 @@ public class WaveManager : MonoBehaviour
         {
 			StartCoroutine(WaitThenChangeWave());
         }
-
 	}
 
 	void SpawnWave()
@@ -97,7 +96,6 @@ public class WaveManager : MonoBehaviour
 	}
 
 
-	
 	
 	IEnumerator WaitThenChangeWave()
 	{

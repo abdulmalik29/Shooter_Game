@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ScrollUV : MonoBehaviour
 {
 	public float parralax = 2f;
 
-	void Update()
-	{
+	private Material mat;
 
+	private void Start()
+    {
 		MeshRenderer mr = GetComponent<MeshRenderer>();
-
-		Material mat = mr.material;
-
+		mat = mr.material;
+	}
+    void Update()
+	{
 		Vector2 offset = mat.mainTextureOffset;
 
 		offset.x = transform.position.x / transform.localScale.x / parralax;

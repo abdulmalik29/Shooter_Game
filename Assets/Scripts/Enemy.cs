@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     [Header("")]
     public GameObject deathEffect;
-    private float waveStrenth = 20;
+    public float waveStrenth = 20;
 
     private RippleProcessor rp;
 

@@ -121,6 +121,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!21 &750721
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Starfield Material tr (Instance) (Instance)
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Illum:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e684ae8d575632c45ab409b970663892, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _EmissionLM: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &331899150
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +284,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80ac56450268fb549882d9d8f2b5ceb2, type: 2}
+  - {fileID: 750721}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -289,9 +320,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433231390}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.041, y: -0.047, z: 12}
-  m_LocalScale: {x: 25.704681, y: 14.50191, z: 1}
+  m_LocalRotation: {x: 0.0019583083, y: -0.0017083229, z: 0.0000033454335, w: 0.99999666}
+  m_LocalPosition: {x: 0, y: 0, z: 12.001}
+  m_LocalScale: {x: 30.490667, y: 17.126799, z: 28.800388}
   m_Children: []
   m_Father: {fileID: 2085822624}
   m_RootOrder: 0
@@ -349,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 5784891497854501540, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5784891497854501540, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
@@ -410,6 +441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5784891497854501562, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
@@ -614,6 +650,7 @@ MonoBehaviour:
   spawnRadius: 0
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
+  waveStrenth: 20
 --- !u!50 &1056059916
 Rigidbody2D:
   serializedVersion: 4
@@ -713,7 +750,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094312023
 GameObject:
@@ -787,7 +824,7 @@ Transform:
   m_GameObject: {fileID: 1253242299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 11}
-  m_LocalScale: {x: 41.73948, y: 25.362947, z: 1}
+  m_LocalScale: {x: 36.614685, y: 23.114897, z: 33}
   m_Children: []
   m_Father: {fileID: 983135479}
   m_RootOrder: 0
@@ -837,7 +874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dcaed8a9fe9d0f4458082897c642e548, type: 2}
+  - {fileID: 1470507756}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1114,6 +1151,81 @@ MonoBehaviour:
   healthText: {fileID: 1483192617}
   levelUpEffect: {fileID: 23068680322507545, guid: ca7b137483814af4fad1d92f72521652,
     type: 3}
+--- !u!21 &1470507756
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarfieldMat (Instance) (Instance)
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a497497cf2bf32c45aea598c6091d040, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1483192615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,7 +1601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 0
-  DebuggingWaveNumber: 0
+  DebuggingWaveNumber: -1
   startSpawnRadius: 10
   waves:
   - scoreGate: 80
@@ -1522,7 +1634,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 879491858878048644, guid: 074874af88d268c47b6a76afc71ce698,
         type: 3}
       spawnChance: 0.387
-  - scoreGate: 600
+  - scoreGate: 850
     weapon: {fileID: 11400000, guid: 19350428a3b76a94691c5f20d5894c50, type: 2}
     spawnPerSecond: 1.35
     enemies:
@@ -1530,6 +1642,22 @@ MonoBehaviour:
         type: 3}
       spawnChance: 0.2
     - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
+        type: 3}
+      spawnChance: 0.44
+    - enemyPrefab: {fileID: 879491858878048644, guid: 074874af88d268c47b6a76afc71ce698,
+        type: 3}
+      spawnChance: 0.387
+    - enemyPrefab: {fileID: 140535954375462249, guid: 82b941be26cade743bfa22f5c5366d58,
+        type: 3}
+      spawnChance: 0.4
+  - scoreGate: 1350
+    weapon: {fileID: 11400000, guid: fa966dddb4120af418d1b70132960e33, type: 2}
+    spawnPerSecond: 1.1
+    enemies:
+    - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
+        type: 3}
+      spawnChance: 0.2
+    - enemyPrefab: {fileID: 790276125907452665, guid: 07022642b7169d8499e9b84c657a7c2e,
         type: 3}
       spawnChance: 0.44
     - enemyPrefab: {fileID: 879491858878048644, guid: 074874af88d268c47b6a76afc71ce698,
@@ -1763,7 +1891,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8.27
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

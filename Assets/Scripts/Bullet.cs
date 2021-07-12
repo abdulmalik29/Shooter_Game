@@ -72,6 +72,10 @@ public class Bullet : MonoBehaviour
                     // get any colliders in range and on the layermask
                     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, AOE_range);
 
+                    if(enemiesInRange.Length <= 0)
+                    {
+                        return;
+                    }
 
                     // this is a list that we will populate with enemies in range
                     List<GameObject> enemiesToHit = new List<GameObject>();
