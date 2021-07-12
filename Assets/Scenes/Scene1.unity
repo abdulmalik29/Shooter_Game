@@ -637,7 +637,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056059913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9040ba1f6d22a442a12bdf9e59e72a2, type: 3}
   m_Name: 
@@ -1600,12 +1600,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e97fab887d52bd46a542ca917938653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 0
+  Debugging: 1
   DebuggingWaveNumber: -1
   startSpawnRadius: 10
   waves:
   - scoreGate: 80
-    weapon: {fileID: 11400000, guid: d0a34cffcc476794fa2ecf47a2d026e8, type: 2}
+    weapon: {fileID: 11400000, guid: a9b95cdf57897e442a966dbc03e23f30, type: 2}
     spawnPerSecond: 1.5
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,

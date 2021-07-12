@@ -21,27 +21,25 @@ public class Bullet : MonoBehaviour
     public int AOE_maxTargets = 0;
     public float AOE_range;
 
-    public enum MyEnum
-    {
-        myEnum1,
-        myEnum2,
-        myEnum3
-    };
+    [Header("")]
+    public bool isSpiral = false;
+    float angle = 0f;
 
     public static event EventHandler onAOE_Attack;
     private Rigidbody2D rb;
-    public MyEnum s;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * speed;
-        rb.rotation = PlayrMovement.playerAngle+90;
+        if (!isSpiral)
+        {
+            rb.velocity = transform.up * speed;
+            rb.rotation = PlayrMovement.playerAngle+90;
+        }
 
         if (isEnemyBullet)
             rb.AddTorque(5f, ForceMode2D.Impulse);
-
-        s = MyEnum.myEnum1;
 
     }
 
