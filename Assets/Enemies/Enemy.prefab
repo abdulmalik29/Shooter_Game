@@ -142,6 +142,7 @@ MonoBehaviour:
   spawnRadius: 0
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
+  waveStrenth: 20
 --- !u!114 &5784891497854501563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,9 +160,7 @@ MonoBehaviour:
   turnSpeed: 0.3
   repelRange: 2
   repelAmount: 0.3
-  startMaxChaseDistance: 20
-  angulargSpeed: 2
-  rotationRadius: 2
+  startMaxChaseDistance: 15
   attackingSpeed: 1
   shootDistance: 5
   bulletPrefab: {fileID: 0}
