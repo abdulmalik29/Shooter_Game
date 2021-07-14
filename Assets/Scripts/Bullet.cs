@@ -21,9 +21,9 @@ public class Bullet : MonoBehaviour
     public int AOE_maxTargets = 0;
     public float AOE_range;
 
-    [Header("")]
-    public bool isSpiral = false;
-    float angle = 0f;
+    //[Header("")]
+    //public bool isSpiral = false;
+    //float angle = 0f;
 
     public static event EventHandler onAOE_Attack;
     private Rigidbody2D rb;
@@ -32,11 +32,9 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (!isSpiral)
-        {
-            rb.velocity = transform.up * speed;
-            rb.rotation = PlayrMovement.playerAngle+90;
-        }
+
+        rb.velocity = transform.up * speed;
+        rb.rotation = PlayrMovement.playerAngle+90;
 
         if (isEnemyBullet)
             rb.AddTorque(5f, ForceMode2D.Impulse);

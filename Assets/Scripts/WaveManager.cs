@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
 public class WaveManager : MonoBehaviour
 {
 
@@ -20,6 +21,7 @@ public class WaveManager : MonoBehaviour
 	private float spawnRadius;
 
 	public Wave[] waves;
+	private ArrayList wavesList = new ArrayList();
 
 	public static int currentWaveNum;
 	public static Wave currentWave;
@@ -28,6 +30,14 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
+
+        for (int i = 0; i < waves.Length; i++)
+        {
+			wavesList.Add(waves[i]);
+		}
+
+		//Debug.Log(wavesList.Count);
+
 		if (DebuggingWaveNumber == -1)
         {
 			currentWaveNum = 0;
@@ -51,12 +61,24 @@ public class WaveManager : MonoBehaviour
 
 		/*		if (Progression.IsGrowing)
 					return;*/
-		if (currentWaveNum < waves.Length)
+
+		if (currentWaveNum < wavesList.Count)
 		{
-			currentWave = waves[currentWaveNum];
+			currentWave = (Wave) wavesList[currentWaveNum];
 		}
-		
-		spawnRadius = startSpawnRadius /* * Progression.Growth*/;
+
+        if (wavesList.Count - currentWaveNum == 1)
+        {
+            Debug.Log("There is only one wavew left");
+
+            ulong newScoreGate = (currentWave.scoreGate * 2) + 50;
+            float newSpawnPerSecond = (currentWave.spawnPerSecond) * 0.9f;
+
+            Wave newwave = new Wave(newScoreGate, currentWave.weapon, newSpawnPerSecond, currentWave.enemies);
+            wavesList.Add(newwave);
+        }
+
+        spawnRadius = startSpawnRadius /* * Progression.Growth*/;
 
 		if (Progression.Score  < currentWave.scoreGate)
         {
@@ -96,7 +118,11 @@ public class WaveManager : MonoBehaviour
 	}
 
 
-	
+	void CreateNewWave()
+    {
+
+    }
+
 	IEnumerator WaitThenChangeWave()
 	{
 		if (isCoroutineExecuting)
