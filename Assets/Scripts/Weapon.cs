@@ -20,5 +20,4 @@ public class Weapon : ScriptableObject
 		//bullet.transform.localScale *= Progression.Growth;
 		Destroy(bullet, 10f);
     }
-
 }

@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
                 enemy.GetComponent<Enemy>().Die(false);
             }
         }
+
+        foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("EnemyBullet"))
+        {
+            Destroy(bullet);
+        }
     }
     private void OnDrawGizmos()
     {

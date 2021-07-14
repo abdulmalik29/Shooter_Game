@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -55,7 +56,10 @@ public class EnemyAi : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		EnemyRBs.Remove(rb);
+        if (EnemyRBs.Contains(rb))
+        {
+			EnemyRBs.Remove(rb);
+        }
 	}
 
 	// Update is called once per frame

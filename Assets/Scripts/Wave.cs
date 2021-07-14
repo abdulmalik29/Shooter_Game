@@ -17,9 +17,4 @@ public class Wave {
         spawnPerSecond = _spawnPerSecond;
         enemies = _enemies;
     }
-/*
-    public Wave()
-    {
-
-    }*/
 }

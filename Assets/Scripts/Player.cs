@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        WaveManager.onWaveChanged += heal_onWaveChanged;
+
         currentHearts = maxHearts;
         //Debug.Log("current Hearts: " + currentHearts);
     }
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
         if (currentHearts > 0)
         {
             currentHearts -= Damage;
-            Debug.Log("current Hearts: " + currentHearts);
+            //Debug.Log("current Hearts: " + currentHearts);
         }
     }
 
@@ -31,13 +33,19 @@ public class Player : MonoBehaviour
     {
         if (currentHearts <= maxHearts)
             currentHearts += amount;
-            Debug.Log("current Hearts: " + currentHearts);
+            //Debug.Log("current Hearts: " + currentHearts);
     }
 
     public static void increasHearts(int amount = 1)
     {
         maxHearts += amount;
-        Debug.Log("max Hearts: " + maxHearts);
+        //Debug.Log("max Hearts: " + maxHearts);
+    }
+
+
+    void heal_onWaveChanged(object sender, EventArgs e)
+    {
+        currentHearts = maxHearts;
     }
 
 }

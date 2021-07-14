@@ -48,7 +48,6 @@ public class WaveManager : MonoBehaviour
 		}
 
 		isSpawnerOn = false;
-
 	}
 
     private void Start()

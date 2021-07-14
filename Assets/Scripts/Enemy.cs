@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         {
             Progression.Score += reward;
         }
-        //Debug.Log("Score: "+ Progression.Score);
+
         if (gameObject != null)
         {
             Destroy(gameObject);
@@ -72,7 +72,6 @@ public class Enemy : MonoBehaviour
                 Instantiate(childrenPrefab, spawnPos, Quaternion.identity);
             }
         }
-
 
     }
 
