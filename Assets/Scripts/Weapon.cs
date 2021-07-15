@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
 public class Weapon : ScriptableObject
@@ -17,7 +17,15 @@ public class Weapon : ScriptableObject
 	public void Shoot(Transform firePoint)
 	{
 		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+		//StartCoroutine(setActive(bullet));
 		//bullet.transform.localScale *= Progression.Growth;
+		
 		Destroy(bullet, 10f);
+    }
+	IEnumerator setActive(GameObject bullet)
+	{
+		yield return new WaitForSeconds(.1f);
+		bullet.SetActive(true);
     }
 }

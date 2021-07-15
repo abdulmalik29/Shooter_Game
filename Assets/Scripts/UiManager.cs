@@ -40,7 +40,11 @@ public class UiManager : MonoBehaviour
         Destroy(effect, 3f);
         rp.MaxAmount = 100;
         rp.Ripple(PlayrMovement.Position);
-        
+
+        if (Camera.main.orthographicSize < 9f)
+        {
+            Camera.main.orthographicSize += 1f;
+        }
     }
 
 }
