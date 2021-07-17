@@ -43,8 +43,13 @@ public class UiManager : MonoBehaviour
 
         if (Camera.main.orthographicSize < 9f)
         {
-            Camera.main.orthographicSize += 1f;
+            Camera.main.orthographicSize += 0.6f;
         }
+    }
+
+    public void Player_onPlayerDeath(object sender, EventArgs e)
+    {
+        //StartCoroutine(RestartGame());
     }
 
 }

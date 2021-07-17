@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public static int maxHearts = 5;
     public static int currentHearts;
 
+    public GameObject deathEffect;
+
+    public static event EventHandler onPlayerDeath;
+
     //public static event Action onDamageTaken;
     //public static event Action onHeal;
 
@@ -20,13 +24,28 @@ public class Player : MonoBehaviour
         //Debug.Log("current Hearts: " + currentHearts);
     }
 
+    private void Update()
+    {
+        if (currentHearts < 0)
+        {
+            Die();
+        }
+    }
+
     public static void takeDamage(int Damage = 1)
     {
-        if (currentHearts > 0)
-        {
-            currentHearts -= Damage;
-            //Debug.Log("current Hearts: " + currentHearts);
-        }
+        currentHearts -= Damage;
+    }
+
+    void Die()
+    {
+        GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+        //effect.transform.localScale = transform.localScale;
+        Destroy(gameObject);
+        Destroy(effect, 10f);
+
+        if (onPlayerDeath != null)
+            onPlayerDeath(this, EventArgs.Empty);
     }
 
     public static void heal(int amount = 1)

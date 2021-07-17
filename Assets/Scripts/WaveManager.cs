@@ -117,7 +117,7 @@ public class WaveManager : MonoBehaviour
 	}
 
 
-	void CreateNewWave()
+	void CreateNextWave()
     {
 
     }

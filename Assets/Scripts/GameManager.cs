@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         WaveManager.onWaveChanged += destroyEnemies_onWaveChanged;
+        Player.onPlayerDeath += Player_onPlayerDeath;
     }
 
 
@@ -52,4 +55,16 @@ public class GameManager : MonoBehaviour
             Gizmos.DrawWireSphere(position, levelUpExplosionRange);
         }
     }
+
+    public void Player_onPlayerDeath(object sender, EventArgs e)
+    {
+        StartCoroutine(RestartGame());
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }
