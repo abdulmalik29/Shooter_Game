@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static int maxHearts = 5;
-    public static int currentHearts;
+    public int maxHearts = 5;
+    public int currentHearts;
 
     public GameObject deathEffect;
 
     public static event EventHandler onPlayerDeath;
+    Boolean isTakingDamage = true;
 
+    public static Player instance;
     //public static event Action onDamageTaken;
     //public static event Action onHeal;
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 
     void Start()
     {
@@ -32,9 +39,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    public static void takeDamage(int Damage = 1)
+    public void takeDamage(int Damage = 1)
     {
-        currentHearts -= Damage;
+        if (isTakingDamage)
+        {
+            currentHearts -= Damage;
+            StartCoroutine(stopTakingDamage());
+        }
+    }
+
+    IEnumerator stopTakingDamage()
+    {
+        if (isTakingDamage)
+        {
+            isTakingDamage = false;
+            yield return new WaitForSecondsRealtime(.5f);
+            isTakingDamage = true;
+        }
+
     }
 
     void Die()
@@ -48,14 +70,14 @@ public class Player : MonoBehaviour
             onPlayerDeath(this, EventArgs.Empty);
     }
 
-    public static void heal(int amount = 1)
+    public void heal(int amount = 1)
     {
         if (currentHearts <= maxHearts)
             currentHearts += amount;
             //Debug.Log("current Hearts: " + currentHearts);
     }
 
-    public static void increasHearts(int amount = 1)
+    public void increasHearts(int amount = 1)
     {
         maxHearts += amount;
         //Debug.Log("max Hearts: " + maxHearts);

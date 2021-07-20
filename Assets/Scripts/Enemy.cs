@@ -80,7 +80,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag =="Player")
         {
             Die();
-            Player.takeDamage(damage);
+            Player.instance.takeDamage(damage);
         }
 
         else if (collision.gameObject.CompareTag("Bullet"))

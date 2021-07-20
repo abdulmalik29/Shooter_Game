@@ -143,6 +143,7 @@ MonoBehaviour:
   spawnRadius: 1.5
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
+  waveStrenth: 20
 --- !u!114 &3712644734010835930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,11 +163,11 @@ MonoBehaviour:
   repelAmount: 0.3
   startMaxChaseDistance: 20
   attackingSpeed: 1
-  shootDistance: 0.5
+  shootDistance: 0.4
   bulletPrefab: {fileID: 1494275084034516730, guid: e64118640e4c87c46b701618a4c3520e,
     type: 3}
   firePoint: {fileID: 3712644735355459650}
-  firePerSecond: 0.85
+  firePerSecond: 0.7
 --- !u!1 &3712644735355459651
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,19 +29,11 @@ public class Progression : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnWaveChanged(object sender, EventArgs e)
     {
-        //float baseScale = Growth;
-        //float factor = 1.1f;
 
-        //Growth *= factor;
         Growth = 1.1f;
-
         Debug.Log("Growth" + Growth);
     }
 

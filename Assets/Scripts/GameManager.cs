@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool debbuging;
     private Vector2 position;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,19 @@ public class GameManager : MonoBehaviour
             Destroy(bullet);
         }
     }
+
+    public void Player_onPlayerDeath(object sender, EventArgs e)
+    {
+        Debug.Log("game ended");
+        StartCoroutine(RestartGame());
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSecondsRealtime(2.3f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void OnDrawGizmos()
     {
         if (debbuging)
@@ -55,16 +69,4 @@ public class GameManager : MonoBehaviour
             Gizmos.DrawWireSphere(position, levelUpExplosionRange);
         }
     }
-
-    public void Player_onPlayerDeath(object sender, EventArgs e)
-    {
-        StartCoroutine(RestartGame());
-    }
-
-    IEnumerator RestartGame()
-    {
-        yield return new WaitForSecondsRealtime(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
 }

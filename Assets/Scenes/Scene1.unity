@@ -1447,7 +1447,7 @@ MonoBehaviour:
       spawnChance: 1
   - scoreGate: 200
     weapon: {fileID: 11400000, guid: aeb26badad306a14fb992ea64f2d1983, type: 2}
-    spawnPerSecond: 1.2
+    spawnPerSecond: 1.1
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
@@ -2086,3 +2086,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893d8944be944564bbe344d30ad6bbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1252580254947222, guid: 5c395379133f77e459e516667b965495,
+    type: 3}

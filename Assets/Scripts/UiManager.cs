@@ -30,8 +30,11 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score : " + Progression.Score.ToString();
-        healthText.text = Player.currentHearts.ToString();
-        waveText.text = "Wave: " + (WaveManager.currentWaveNum + 1).ToString();    
+        waveText.text = "Wave: " + (WaveManager.currentWaveNum + 1).ToString();
+        if (Player.instance.currentHearts >= 0)
+        {
+            healthText.text = Player.instance.currentHearts.ToString();
+        }
     }
 
     private void WaveSpawner_onWaveChanged(object sender, EventArgs e)
