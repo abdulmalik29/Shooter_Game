@@ -46,7 +46,7 @@ public class UiManager : MonoBehaviour
 
         if (Camera.main.orthographicSize < 9f)
         {
-            Camera.main.orthographicSize += 0.6f;
+            Camera.main.orthographicSize += 0.5f;
         }
     }
 

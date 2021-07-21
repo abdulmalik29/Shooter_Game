@@ -14,18 +14,21 @@ public class GameManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         WaveManager.onWaveChanged += destroyEnemies_onWaveChanged;
         Player.onPlayerDeath += Player_onPlayerDeath;
+    }
+    void Start()
+    {
+        //WaveManager.onWaveChanged += destroyEnemies_onWaveChanged;
+        //Player.onPlayerDeath += Player_onPlayerDeath;
     }
 
 
     // Update is called once per frame
-    void Update()
-    {
-        position = PlayrMovement.Position;
-    }
     private void destroyEnemies_onWaveChanged(object sender, EventArgs e)
     {
         StartCoroutine(WaitThenDestroy());
@@ -66,7 +69,7 @@ public class GameManager : MonoBehaviour
         if (debbuging)
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(position, levelUpExplosionRange);
+            Gizmos.DrawWireSphere(PlayrMovement.Position, levelUpExplosionRange);
         }
     }
 }

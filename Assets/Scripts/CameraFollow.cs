@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject target;
+    GameObject target;
     public float smoothing = 0.1f;
+
+    private void Awake()
+    {
+        target = GameObject.FindGameObjectsWithTag("Player")[0];
+    }
 
     private void FixedUpdate()
     {

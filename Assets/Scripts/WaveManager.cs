@@ -116,12 +116,6 @@ public class WaveManager : MonoBehaviour
 		Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
 	}
 
-
-	void CreateNextWave()
-    {
-
-    }
-
 	IEnumerator WaitThenChangeWave()
 	{
 		if (isCoroutineExecuting)
@@ -139,6 +133,7 @@ public class WaveManager : MonoBehaviour
 
 		yield return new WaitForSecondsRealtime(3.85f);
 		currentWaveNum++;
+		Player.instance.fully_heal();
 
 		PlayrMovement.movementSpeed = oldSpeed;
 
