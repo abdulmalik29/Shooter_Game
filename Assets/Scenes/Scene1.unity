@@ -535,7 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983135479}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: StarfieldFront
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1415,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
       spawnChance: 1
-  - scoreGate: 200
+  - scoreGate: 190
     weapon: {fileID: 11400000, guid: aeb26badad306a14fb992ea64f2d1983, type: 2}
     spawnPerSecond: 1.1
     enemies:
@@ -1424,7 +1424,7 @@ MonoBehaviour:
       spawnChance: 0.4
     - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
         type: 3}
-      spawnChance: 0.5
+      spawnChance: 0.67
   - scoreGate: 440
     weapon: {fileID: 11400000, guid: 7a2ffe0e34a45ab458f5918f2a4b443b, type: 2}
     spawnPerSecond: 1.7

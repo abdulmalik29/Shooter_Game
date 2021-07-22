@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         if (isTakingDamage)
         {
             isTakingDamage = false;
-            yield return new WaitForSecondsRealtime(.5f);
+            yield return new WaitForSecondsRealtime(.6f);
             isTakingDamage = true;
         }
 
@@ -77,16 +77,14 @@ public class Player : MonoBehaviour
             //Debug.Log("current Hearts: " + currentHearts);
     }
 
-    public void increasHearts(int amount = 1)
-    {
-        maxHearts += amount;
-        //Debug.Log("max Hearts: " + maxHearts);
-    }
-
-
     public void fully_heal()
     {
         currentHearts = maxHearts;
+    }
+    public void increasMaxHearts(int amount = 1)
+    {
+        maxHearts += amount;
+        //Debug.Log("max Hearts: " + maxHearts);
     }
 
 }

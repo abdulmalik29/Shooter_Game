@@ -133,7 +133,7 @@ public class WaveManager : MonoBehaviour
 
 		yield return new WaitForSecondsRealtime(3.85f);
 		currentWaveNum++;
-		Player.instance.fully_heal();
+		Player.instance.heal();
 
 		PlayrMovement.movementSpeed = oldSpeed;
 

@@ -54,7 +54,10 @@ public class Bullet : MonoBehaviour
                 Destroy(effect, hitEffectDuration);
                 Destroy(gameObject);
 
-                Player.instance.takeDamage(damage);
+                if (collision.gameObject.CompareTag("Player"))
+                {
+                    Player.instance.takeDamage(damage);
+                }
             }
         }
         else 
