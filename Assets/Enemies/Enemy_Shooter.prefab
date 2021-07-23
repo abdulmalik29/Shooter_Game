@@ -163,7 +163,7 @@ MonoBehaviour:
   repelAmount: 0.3
   startMaxChaseDistance: 20
   attackingSpeed: 0.8
-  shootDistance: 0.35
+  shootDistance: 0.3
   bulletPrefab: {fileID: 1494275084034516730, guid: e64118640e4c87c46b701618a4c3520e,
     type: 3}
   firePoint: {fileID: 3712644735355459650}

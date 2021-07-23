@@ -56,6 +56,8 @@ public class Enemy : MonoBehaviour
         if (gameObject != null)
         {
             Destroy(gameObject);
+            AudioManager.instance.Play("explosion1");
+
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 4f);
             rp.MaxAmount = waveStrenth;

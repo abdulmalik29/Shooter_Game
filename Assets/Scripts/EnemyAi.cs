@@ -95,8 +95,8 @@ public class EnemyAi : MonoBehaviour
 			{
 				newPos = MoveStrafing(direction, attackingSpeed);
 			}
-
             Shoot();
+
             newPos -= rb.position;
             rb.AddForce(newPos, ForceMode2D.Force);
 
@@ -152,5 +152,8 @@ public class EnemyAi : MonoBehaviour
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, maxChaseDistance);
+
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position, shootDistance);
 	}
 }

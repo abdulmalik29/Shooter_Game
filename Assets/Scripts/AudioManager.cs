@@ -10,6 +10,17 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -25,7 +36,6 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     public void Play(string sound)
     {
-        Debug.Log("test");
         Sound s = Array.Find(sounds, item => item.name == sound);
         if (s == null)
         {

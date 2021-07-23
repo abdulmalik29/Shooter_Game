@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
 
     public void heal(int amount = 1)
     {
-        if (currentHearts <= maxHearts)
+        if (currentHearts < maxHearts)
             currentHearts += amount;
             //Debug.Log("current Hearts: " + currentHearts);
     }

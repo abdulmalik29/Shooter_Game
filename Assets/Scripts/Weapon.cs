@@ -19,13 +19,13 @@ public class Weapon : ScriptableObject
 	{
 		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-		//if (soundName != "")
-		//{
-			//AudioManager.instance.Play(soundName);
-		FindObjectOfType<AudioManager>().Play(soundName);
-		//}
+        if (soundName != "")
+        {
+            AudioManager.instance.Play(soundName);
+            //FindObjectOfType<AudioManager>().Play(soundName);
+        }
 
-		Destroy(bullet, 10f);
+        Destroy(bullet, 10f);
     }
 	IEnumerator setActive(GameObject bullet)
 	{

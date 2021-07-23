@@ -434,7 +434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983135478
 GameObject:
@@ -695,9 +695,15 @@ MonoBehaviour:
   sounds:
   - name: gunShot1
     clip: {fileID: 8300000, guid: d19aceb3e35681046af4374b4004861d, type: 3}
-    volume: 1
+    volume: 0.4
     pitch: 1
-    loop: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: explosion1
+    clip: {fileID: 8300000, guid: edbe6de1091875a498b7b5929d73bdea, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1306342604
 Transform:
@@ -995,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 4242264289035600811, guid: 361f7f46ff6016a43925959798c15e07,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4242264289035600811, guid: 361f7f46ff6016a43925959798c15e07,
         type: 3}
@@ -1186,17 +1192,17 @@ MonoBehaviour:
       spawnChance: 1
   - scoreGate: 190
     weapon: {fileID: 11400000, guid: aeb26badad306a14fb992ea64f2d1983, type: 2}
-    spawnPerSecond: 1.1
+    spawnPerSecond: 1.2
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
-      spawnChance: 0.4
+      spawnChance: 0.7
     - enemyPrefab: {fileID: 3712644734010835933, guid: 4be525a8a513c6a409f108c3eb6f7fb3,
         type: 3}
-      spawnChance: 0.67
+      spawnChance: 0.65
   - scoreGate: 440
     weapon: {fileID: 11400000, guid: 7a2ffe0e34a45ab458f5918f2a4b443b, type: 2}
-    spawnPerSecond: 1.7
+    spawnPerSecond: 2
     enemies:
     - enemyPrefab: {fileID: 5784891497854501542, guid: be4ac3cc2165b274c9ceebd37985e2b9,
         type: 3}
