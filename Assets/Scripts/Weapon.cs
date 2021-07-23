@@ -9,6 +9,7 @@ public class Weapon : ScriptableObject
 	public GameObject bulletPrefab;
 	public float fireRate;
 	public int damage = 20;
+	public String soundName = "";
 	//public bool shootsRaycasts = false;
 
 	[Header("AOE Damage")]
@@ -18,9 +19,12 @@ public class Weapon : ScriptableObject
 	{
 		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-		//StartCoroutine(setActive(bullet));
-		//bullet.transform.localScale *= Progression.Growth;
-		
+		//if (soundName != "")
+		//{
+			//AudioManager.instance.Play(soundName);
+		FindObjectOfType<AudioManager>().Play(soundName);
+		//}
+
 		Destroy(bullet, 10f);
     }
 	IEnumerator setActive(GameObject bullet)

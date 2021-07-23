@@ -16,4 +16,5 @@ MonoBehaviour:
     type: 3}
   fireRate: 3.5
   damage: 30
+  soundName: gunShot1
   AOE_damage: 0
