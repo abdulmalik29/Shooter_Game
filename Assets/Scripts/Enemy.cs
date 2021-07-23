@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
 
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 4f);
+
             rp.MaxAmount = waveStrenth;
             rp.Ripple(transform.position);
         }

@@ -701,7 +701,31 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: explosion1
     clip: {fileID: 8300000, guid: edbe6de1091875a498b7b5929d73bdea, type: 3}
-    volume: 0.6
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gunShot2
+    clip: {fileID: 8300000, guid: b8c4f21f8318ea841a6f4f5d9dfdfb0f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gunShot3
+    clip: {fileID: 8300000, guid: 0eb069de64a468b46b9c243a5b507453, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gunShot4
+    clip: {fileID: 8300000, guid: 54291dd25dbccb841bacf6ab916fdb3f, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: eshot
+    clip: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -1180,7 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 0
-  DebuggingWaveNumber: -1
+  DebuggingWaveNumber: 3
   startSpawnRadius: 10
   waves:
   - scoreGate: 80

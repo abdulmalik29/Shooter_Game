@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
             if (enemy != null)
             {
                 enemy.GetComponent<Enemy>().Die(false);
+                yield return new WaitForSeconds(0.11f);
+
             }
         }
 
