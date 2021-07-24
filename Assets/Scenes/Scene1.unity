@@ -701,8 +701,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: explosion1
     clip: {fileID: 8300000, guid: edbe6de1091875a498b7b5929d73bdea, type: 3}
-    volume: 0.5
-    pitch: 1
+    volume: 0.55
+    pitch: 0.8
     loop: 0
     source: {fileID: 0}
   - name: gunShot2
@@ -726,6 +726,18 @@ MonoBehaviour:
   - name: eshot
     clip: {fileID: 8300000, guid: a245ee5d75348c84a89ffb7992f1dc82, type: 3}
     volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: mainSong
+    clip: {fileID: 8300000, guid: ef00c052fdc970a45b43c47b75861746, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gunShot5
+    clip: {fileID: 8300000, guid: df78a75cd106b884b8023cb4537b384e, type: 3}
+    volume: 0.35
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -1204,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 0
-  DebuggingWaveNumber: 3
+  DebuggingWaveNumber: 6
   startSpawnRadius: 10
   waves:
   - scoreGate: 80
@@ -1271,6 +1283,25 @@ MonoBehaviour:
       spawnChance: 0.4
   - scoreGate: 3000
     weapon: {fileID: 11400000, guid: 0d705a7b8d523a94aa1ef9db545060f6, type: 2}
+    spawnPerSecond: 1.1
+    enemies:
+    - enemyPrefab: {fileID: 6442051155951760755, guid: 76f063dcb24ece84db415080b9b51aec,
+        type: 3}
+      spawnChance: 0.3
+    - enemyPrefab: {fileID: 790276125907452665, guid: 07022642b7169d8499e9b84c657a7c2e,
+        type: 3}
+      spawnChance: 0.44
+    - enemyPrefab: {fileID: 879491858878048644, guid: 074874af88d268c47b6a76afc71ce698,
+        type: 3}
+      spawnChance: 0.387
+    - enemyPrefab: {fileID: 140535954375462249, guid: 82b941be26cade743bfa22f5c5366d58,
+        type: 3}
+      spawnChance: 0.4
+    - enemyPrefab: {fileID: 7232561804278275632, guid: 0d04e8c4c0478f74b8a31ae78878dd16,
+        type: 3}
+      spawnChance: 0.25
+  - scoreGate: 3500
+    weapon: {fileID: 11400000, guid: 1023ab9931b3e064da1ffe5da41ee06f, type: 2}
     spawnPerSecond: 1.1
     enemies:
     - enemyPrefab: {fileID: 6442051155951760755, guid: 76f063dcb24ece84db415080b9b51aec,

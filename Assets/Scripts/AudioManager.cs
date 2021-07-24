@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -29,8 +30,10 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.pitch = s.pitch;
             s.source.volume = s.volume;
+            //s.source.spatialBlend = .5f;
 
         }
+        Play("mainSong");
     }
 
     // Update is called once per frame
