@@ -151,8 +151,9 @@ MonoBehaviour:
   childrenPrefab: {fileID: 9179652184524361097, guid: b6f643ff93dc0e34d94c869bc69f919d,
     type: 3}
   spawnRadius: 1.5
-  deathEffect: {fileID: 1805389993079476, guid: fa2e9795b029be44fa979cbb5322275d,
+  deathEffect: {fileID: 6220454137234330131, guid: b893cfb7482e8fe499dd0b43b1929b87,
     type: 3}
+  waveStrenth: 35
 --- !u!114 &140535954375462243
 MonoBehaviour:
   m_ObjectHideFlags: 0

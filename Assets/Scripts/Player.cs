@@ -14,21 +14,16 @@ public class Player : MonoBehaviour
     Boolean isTakingDamage = true;
 
     public static Player instance;
-    //public static event Action onDamageTaken;
-    //public static event Action onHeal;
+
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
-    }
+        AudioManager.instance.Stop("mainSong");
+        AudioManager.instance.Play("mainSong");
 
-    void Start()
-    {
-        //WaveManager.onWaveChanged += heal_onWaveChanged;
-
-        currentHearts = maxHearts;
-        //Debug.Log("current Hearts: " + currentHearts);
+        currentHearts = 3;
     }
 
     private void Update()
@@ -61,11 +56,10 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        AudioManager.instance.Play("playerDeathSound");
         GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-        //effect.transform.localScale = transform.localScale;
         Destroy(gameObject);
         Destroy(effect, 10f);
-
         if (onPlayerDeath != null)
             onPlayerDeath(this, EventArgs.Empty);
     }
@@ -74,7 +68,6 @@ public class Player : MonoBehaviour
     {
         if (currentHearts < maxHearts)
             currentHearts += amount;
-            //Debug.Log("current Hearts: " + currentHearts);
     }
 
     public void fully_heal()
@@ -84,7 +77,6 @@ public class Player : MonoBehaviour
     public void increasMaxHearts(int amount = 1)
     {
         maxHearts += amount;
-        //Debug.Log("max Hearts: " + maxHearts);
     }
 
 }

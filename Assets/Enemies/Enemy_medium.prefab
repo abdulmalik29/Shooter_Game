@@ -142,6 +142,7 @@ MonoBehaviour:
   spawnRadius: 0
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
+  waveStrenth: 35
 --- !u!114 &879491858878048643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eType: 1
-  moveSpeed: 6
+  moveSpeed: 7
   turnSpeed: 0.3
   repelRange: 2
   repelAmount: 0.3

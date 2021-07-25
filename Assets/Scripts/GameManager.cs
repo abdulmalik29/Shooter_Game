@@ -7,13 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    public float levelUpExplosionRange;
     public bool debbuging;
-    private Vector2 position;
 
-
-    // Start is called before the first frame update
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -21,12 +16,6 @@ public class GameManager : MonoBehaviour
         WaveManager.onWaveChanged += destroyEnemies_onWaveChanged;
         Player.onPlayerDeath += Player_onPlayerDeath;
     }
-    void Start()
-    {
-        //WaveManager.onWaveChanged += destroyEnemies_onWaveChanged;
-        //Player.onPlayerDeath += Player_onPlayerDeath;
-    }
-
 
     // Update is called once per frame
     private void destroyEnemies_onWaveChanged(object sender, EventArgs e)
@@ -62,16 +51,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RestartGame()
     {
-        yield return new WaitForSecondsRealtime(2.3f);
+        AudioManager.instance.Stop("mainSong");
+
+        yield return new WaitForSecondsRealtime(2.35f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void OnDrawGizmos()
+/*    private void OnDrawGizmos()
     {
-        if (debbuging)
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(PlayrMovement.Position, levelUpExplosionRange);
-        }
-    }
+    }*/
 }

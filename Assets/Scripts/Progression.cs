@@ -34,7 +34,6 @@ public class Progression : MonoBehaviour
     {
 
         Growth = 1.1f;
-        //Debug.Log("Growth" + Growth);
     }
 
 }

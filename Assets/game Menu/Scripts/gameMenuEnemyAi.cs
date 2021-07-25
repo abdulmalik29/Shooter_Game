@@ -42,6 +42,8 @@ public class gameMenuEnemyAi : MonoBehaviour
         rp.MaxAmount = 10f;
         rp.Ripple(transform.position);
 
+        AudioManager.instance.Play("explosion1");
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)

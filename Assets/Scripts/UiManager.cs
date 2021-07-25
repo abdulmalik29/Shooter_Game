@@ -21,7 +21,6 @@ public class UiManager : MonoBehaviour
     void Start()
     {
         WaveManager.onWaveChanged += WaveSpawner_onWaveChanged;
-
         rp = Camera.main.GetComponent<RippleProcessor>();
 
     }

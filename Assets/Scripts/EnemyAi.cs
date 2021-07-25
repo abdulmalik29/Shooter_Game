@@ -49,7 +49,7 @@ public class EnemyAi : MonoBehaviour
 			EnemyRBs = new List<Rigidbody2D>();
 		}
 
-        moveSpeed *= (Progression.Growth - 1f) * 0.5f + 1f;
+        moveSpeed *= (Progression.Growth *0.8f);
 
         EnemyRBs.Add(rb);
 	}

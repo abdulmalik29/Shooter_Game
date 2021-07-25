@@ -142,7 +142,7 @@ MonoBehaviour:
   spawnRadius: 0
   deathEffect: {fileID: 1651493191715826, guid: a5b176dd23cbd654184c1703e40ff613,
     type: 3}
-  waveStrenth: 20
+  waveStrenth: 22
 --- !u!114 &5784891497854501563
 MonoBehaviour:
   m_ObjectHideFlags: 0

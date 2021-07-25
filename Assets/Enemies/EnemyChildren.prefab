@@ -150,7 +150,7 @@ MonoBehaviour:
   splitOnDeath: 0
   childrenPrefab: {fileID: 0}
   spawnRadius: 0
-  deathEffect: {fileID: 1805389993079476, guid: fa2e9795b029be44fa979cbb5322275d,
+  deathEffect: {fileID: 2749333465791283609, guid: 3991e2009d9a70b4ca20cdfb094a7894,
     type: 3}
   waveStrenth: 20
 --- !u!114 &9179652184524361098
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eType: 1
-  moveSpeed: 8
+  moveSpeed: 8.5
   turnSpeed: 0.1
   repelRange: 2
   repelAmount: 0.3

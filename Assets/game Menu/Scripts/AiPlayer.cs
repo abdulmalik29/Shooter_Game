@@ -40,7 +40,7 @@ public class AiPlayer : MonoBehaviour
         if (Time.time >= nextTimeToFire)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
+            AudioManager.instance.Play("gunShot4");
             PlayrMovement.playerAngle = angle;
 
             Destroy(bullet, 30f);

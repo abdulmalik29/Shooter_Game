@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Awake()
     {
+        //DontDestroyOnLoad(this.gameObject);
         target = GameObject.FindGameObjectsWithTag("Player")[0];
     }
 
