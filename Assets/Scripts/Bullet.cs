@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         {
             if (collision.gameObject.tag != "Enemy")
             {
-                Debug.Log("took damage");
+                //Debug.Log("took damage");
 
                 GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
                 Destroy(effect, hitEffectDuration);

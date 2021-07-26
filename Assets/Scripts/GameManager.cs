@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void Player_onPlayerDeath(object sender, EventArgs e)
     {
-        Debug.Log("game ended");
+        //Debug.Log("game ended");
         StartCoroutine(RestartGame());
     }
 

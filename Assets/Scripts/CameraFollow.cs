@@ -15,11 +15,14 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(transform.position != target.transform.position)
+        if (target != null)
         {
-            Vector3 targetPos = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+            if(transform.position != target.transform.position)
+            {
+                Vector3 targetPos = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
 
-            transform.position = Vector3.Lerp(transform.position, targetPos, smoothing);
+                transform.position = Vector3.Lerp(transform.position, targetPos, smoothing);
+            }
         }
     }
 }

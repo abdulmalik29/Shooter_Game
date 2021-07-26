@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         if (isTakingDamage)
         {
             isTakingDamage = false;
-            yield return new WaitForSecondsRealtime(.6f);
+            yield return new WaitForSecondsRealtime(.4f);
             isTakingDamage = true;
         }
 
@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        PlayFabManager.instance.UpdateLeaderboard(Progression.Score);
         AudioManager.instance.Play("playerDeathSound");
         GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(gameObject);
