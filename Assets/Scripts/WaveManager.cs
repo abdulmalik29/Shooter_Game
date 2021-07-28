@@ -30,14 +30,7 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
-
-        for (int i = 0; i < waves.Length; i++)
-        {
-			wavesList.Add(waves[i]);
-		}
-
-		//Debug.Log(wavesList.Count);
-
+		isSpawnerOn = false;
 		if (DebuggingWaveNumber == -1)
         {
 			currentWaveNum = 0;
@@ -47,7 +40,10 @@ public class WaveManager : MonoBehaviour
 			currentWaveNum = DebuggingWaveNumber;
 		}
 
-		isSpawnerOn = false;
+        for (int i = 0; i < waves.Length; i++)
+        {
+			wavesList.Add(waves[i]);
+		}
 	}
 
     private void Start()

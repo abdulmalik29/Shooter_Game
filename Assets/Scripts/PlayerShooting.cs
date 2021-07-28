@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-	public bool debbuging = false;
+	//public bool debbuging = false;
 	public Transform firePoint;
 	public Weapon startCurrentWeapon;
 	public static Weapon currentWeapon;
@@ -13,18 +13,18 @@ public class PlayerShooting : MonoBehaviour
 
     private void Start()
     {
-		if (debbuging)
-        {
-			currentWeapon = startCurrentWeapon;
-        }
+		//currentWeapon = WaveManager.currentWave.weapon;
+	}
+
+    private void LateUpdate()
+    {
+		currentWeapon = WaveManager.currentWave.weapon;
 	}
 
     // Update is called once per frame
     void Update()
 	{
-		if (!debbuging)
-			currentWeapon = WaveManager.currentWave.weapon;
-
+		
 		if (Input.GetButton("Fire1"))
 		{
 			if (Time.time >= nextTimeOfFire)

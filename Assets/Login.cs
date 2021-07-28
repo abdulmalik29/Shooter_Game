@@ -7,7 +7,7 @@ using PlayFab.ClientModels;
 
 public class Login : MonoBehaviour
 {
-    public Text StatusText;
+    /*public Text StatusText;
 
     bool isLoading = false;
     bool shouldCreateANewAcount = false;
@@ -28,10 +28,10 @@ public class Login : MonoBehaviour
 
     public void UseNewUser()
     {
-        GameStatic.isLogedin = false;
+        GameStatic.isLogsedin = false;
         PlayerPrefs.DeleteKey(CUSTOM_KEY_ID);
         Auth();
     }
 
-
+*/
 }

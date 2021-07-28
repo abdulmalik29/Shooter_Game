@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        PlayFabManager.instance.UpdateLeaderboard(Progression.Score);
+        //PlayFabManager.instance.UpdateLeaderboard(Progression.Score);
         AudioManager.instance.Play("playerDeathSound");
         GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(gameObject);

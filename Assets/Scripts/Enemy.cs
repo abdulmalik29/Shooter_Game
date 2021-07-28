@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour
 
     private void Bullet_onAOE_Attack(object sender, EventArgs e)
     {
-        takeDamage(PlayerShooting.currentWeapon.AOE_damage);
+        if (gameObject != null)
+            takeDamage(PlayerShooting.currentWeapon.AOE_damage);
     }
 
     void takeDamage(int dmg)

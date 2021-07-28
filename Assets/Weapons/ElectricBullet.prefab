@@ -154,11 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemyBullet: 0
-  damage: 15
   speed: 20
   debbuging: 1
   hitEffect: {fileID: 41524049509131458, guid: 282a2a4217ebd734ca4831b78de05b2c, type: 3}
   hitEffectDuration: 1.1
-  hasAOE_damage: 1
+  hasAOE_damage: 0
   AOE_maxTargets: 4
   AOE_range: 1.2
