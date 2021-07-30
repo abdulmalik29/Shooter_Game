@@ -6,6 +6,6 @@ One of the aims of this project is sharpening and further improving my skills in
 https://scientist-playground.itch.io/neon-warrior
 
 ## Screenshots
-![img](https://github.com/abdulmalik29/Shooter_Game/blob/master/Screenshots/Capture.PNGn.PNG)
+![img](https://github.com/abdulmalik29/Shooter_Game/blob/master/trailer/final3_Trim2.mp4)
 ![img1](https://github.com/abdulmalik29/Shooter_Game/blob/master/Screenshots/Capture.PNG12.PNG)
 ![img2](https://github.com/abdulmalik29/Shooter_Game/blob/master/Screenshots/Capture.PNGse.PNG)
