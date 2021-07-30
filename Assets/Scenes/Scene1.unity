@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 0
-  DebuggingWaveNumber: 5
+  DebuggingWaveNumber: -1
   startSpawnRadius: 10
   waves:
   - scoreGate: 80
